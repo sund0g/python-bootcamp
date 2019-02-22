@@ -6,6 +6,7 @@ Coursework and notes from [Udemy](https://www.udemy.com/complete-python-bootcamp
 * [Section 1: Course Overview](#1)
 * [Section 2: Python setup](#2)
 * [Section 3: Python Object and Data Structure Basics](#3)
+* [Section 4: Python Comparison Operators](#4)
 
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
@@ -511,5 +512,26 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 * download the notebook to take the exam.
 
+<a name="4"></a>
+## Section 4: Python Comparison Operators
 
-	
+#### Lesson 31. Comparison Operators
+
+Operator|Description|Example
+---|---|---
+==|If the values of two operands are equal, then the condition becomes true.|(a == b) is not true.
+!=|If values of two operands are not equal, then condition becomes true.|(a != b) is true.
+<>|If values of two operands are not equal, then condition becomes true.|(a <> b) is true. This is similar to != operator.
+\>|If the value of left operand is greater than the value of right operand, then condition becomes true.|(a > b) is not true.
+<|If the value of left operand is less than the value of right operand, then condition becomes true.|(a < b) is true.
+/>=|If the value of left operand is greater than or equal to the value of right operand, then condition becomes true|(a >= b) is not true.
+<=|If the value of left operand is less than or equal to the value of right operand, then condition becomes true.|(a <= b) is true.
+
+#### Lesson 32. Chaining Comparison Operators with Logical Operators
+
+Operator|Description|Example
+---|---|---
+and/AND|If both the operands are true then condition becomes true.|(a and b) is true.
+or/OR|If any of the two operands are non-zero then condition becomes true.|(a or b) is true.
+not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
+
