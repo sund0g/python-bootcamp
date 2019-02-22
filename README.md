@@ -150,7 +150,7 @@ This creates a connection to the Python interpreter, from which lines of code ca
 	
 	some examples where mystring = "abcdefgh"
 	
-		mystring[3]		returns d
+		mystring[3]	returns d
 		mystring[-1]	returns h
 		mystring[-2]	returns g
 		
@@ -161,10 +161,10 @@ This creates a connection to the Python interpreter, from which lines of code ca
 	
 	some examples where mystring = "abcdefgh"
 		
-		mystring[3:]	returns defgh
-		mystring[:3]	returns abc
-		mystring[3:6]	returns def
-		mystring[::2]	returns aceg
+		mystring[3:]		returns defgh
+		mystring[:3]		returns abc
+		mystring[3:6]		returns def
+		mystring[::2]		returns aceg
 		mystring[2:7:2]	returns ceg
 		
 		Can also do this: "abcdefgh"[2:5] returns cde
@@ -218,9 +218,9 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 	* [Complete list as of v.3.7](https://docs.python.org/3.7/library/stdtypes.html#string-methods)
 	* Common examples, where x = "Hello World"
 	
-			x.upper()		returns "HELLO WORLD"
-			x.lower()		returns "hello world"
-			x.split()		returns a list ["Hello", "World"]
+			x.upper()	returns "HELLO WORLD"
+			x.lower()	returns "hello world"
+			x.split()	returns a list ["Hello", "World"]
 			x.split('o')	returns ["Hell", " W", "rld"]
 			
 > '#' denotes a comment in Python
@@ -303,12 +303,12 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 	where my_list = ['1','2','3']
 	
-		print(my_list[0])	returns 1					(indexing)
-		print(my_list[1:])	returns ['2', '3']				(slicing)
-		len(my_list)		returns 3					(method call)
+		print(my_list[0])	returns 1				(indexing)
+		print(my_list[1:])	returns ['2', '3']			(slicing)
+		len(my_list)		returns 3				(method call)
 		my_list + ['4','5']	returns ['1','2','3','4','5']		(concatenation)
 		my_list.append('6')	returns ['1','2','3','4','5', '6']	(method call)
-		my_list.pop(0)	returns ['2','3','4','5', '6']	(method call)
+		my_list.pop(0)	returns ['2','3','4','5', '6']		(method call)
 
 * List elements are **mutable** unlike string characters.
 
@@ -456,11 +456,11 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 * [Methods list as of 3.7.2](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 * **Method examples**
 
-		myfile.read()				returns the entire file as a single \n-delimited line.
-		myfile.seek(0)			resets the file counter to the file head.
+		myfile.read()			returns the entire file as a single \n-delimited line.
+		myfile.seek(0)		resets the file counter to the file head.
 		myfile.readlines()		returns the file as a list with the lines as objects.
 		myfile.write('<content>')	writes <content> to file.
-		myfile.close()			closes the file.		
+		myfile.close()		closes the file.		
 	> The **.read methods** leave the file counter at the end of the file. It has to be reset before reading the file again using the **.seek(0)** method.
 			
 * File **modes** and **permissions** are set with the additional syntax, `mode='mode'`, e.g.
