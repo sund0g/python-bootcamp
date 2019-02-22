@@ -289,10 +289,11 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		returns Scott is 42 years old
 			
 ---
-###Takeaway
----
+### Takeaway
 
-* Additional resource for pring formatting: https://pyformat.info/
+* Additional resource for string formatting: https://pyformat.info/
+
+---
 
 #### Lessons 20 & 21. Lists
 
@@ -302,12 +303,12 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 	where my_list = ['1','2','3']
 	
-		print(my_list[0])	returns 1							(indexing)
-		print(my_list[1:])	returns ['2', '3']					(slicing)
-		len(my_list)		returns 3							(method call)
+		print(my_list[0])	returns 1					(indexing)
+		print(my_list[1:])	returns ['2', '3']				(slicing)
+		len(my_list)		returns 3					(method call)
 		my_list + ['4','5']	returns ['1','2','3','4','5']		(concatenation)
 		my_list.append('6')	returns ['1','2','3','4','5', '6']	(method call)
-		my_list.pop(0)		returns ['2','3','4','5', '6']		(method call)
+		my_list.pop(0)	returns ['2','3','4','5', '6']	(method call)
 
 * List elements are **mutable** unlike string characters.
 
@@ -318,7 +319,7 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 > To return a sorted string, use the **sorted(<list>)** command.
 
 ---
-###Question
+### Question
 
 * How do I index a nested list? For example if I want to grab 2 from [1,1,[1,2]]?
 
@@ -349,8 +350,8 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 * Dictionaries support **any object types** and **multiple stacking**, e.g.
 
 		print (my_dict['k3']['insidekey'])	returns 100
-		print (my_dict['k2'][2])			returns 2
-		print(my_dict['k4'][2].upper())		returns C
+		print (my_dict['k2'][2])		returns 2
+		print(my_dict['k4'][2].upper())	returns C
 		
 * To **add** or **overwrite** an object to a dictionary,
 
@@ -361,12 +362,12 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		
 * **Useful methods**
 
-		print(my_dict1.keys())		returns ict_keys(['k1', 'k2', 'k3'])
+		print(my_dict1.keys())	returns dict_keys(['k1', 'k2', 'k3'])
 		print(my_dict1.values())	returns dict_values(['NEW VAL', 200, 300])
-		print(my_dict1.items())		returns dict_items([('k1', 'NEW VAL'), ('k2', 200), ('k3', 300)])
+		print(my_dict1.items())	returns dict_items([('k1', 'NEW VAL'), ('k2', 200), ('k3', 300)])
 		
 ---
-####Question
+#### Question
 
 * How do I print the values of the dictionary in order?
 
@@ -385,16 +386,16 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 	where my_tuple = ('a','a','b')
 	
-		print(my_tuple.count('a'))		returns 2 (number of times 'a' is in the my_tuple)
-		print(my_tuple.index('a'))		returns 0 (the index of the FIRST 'a')
-		print(my_tuple.index('b'))		returns 2 (the index of 'b')
+		print(my_tuple.count('a'))	returns 2 (number of times 'a' is in the my_tuple)
+		print(my_tuple.index('a'))	returns 0 (the index of the FIRST 'a')
+		print(my_tuple.index('b'))	returns 2 (the index of 'b')
 
 * If you try to reassign an object inside a tuple, an error will be returned, e.g.
 
 		my_tuple[0] = 'NEW'	returns TypeError: 'tuple' object does not support item assignment
 		
 ---
-####Takeaway
+#### Takeaway
 
 * **Tuples** are very useful when passing objects that are not to be changed.
 
@@ -406,7 +407,7 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 * `set()` is the syntax to create a set, e.g. `my_set = set()`
 * Examples,
 
-		my_set = set()		creates an empty set
+		my_set = set()	creates an empty set
 		my_set.add(1)		adds the number 1 to my_set
 		my_set.add(2)		adds the number 2 to my_set
 		print(my_set)		returns {1, 2}
@@ -449,17 +450,17 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 	2. `with open('myfile.txt') as myfile: /n/t<code block>`
 
 	> While method 1 works, you have to remember to close the file with .close(). [Method 2](https://stackoverflow.com/questions/3012488/what-is-the-python-with-statement-designed-for) auto-closes the file.
-	
+	>
 	> An **ErrorNo 2** will be returned if 1) the file doesn't exist, or 2) The working directory is incorrect.
 
 * [Methods list as of 3.7.2](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 * **Method examples**
 
 		myfile.read()				returns the entire file as a single \n-delimited line.
-		myfile.seek(0)				resets the file counter to the file head.
-		myfile.readlines()			returns the file as a list with the lines as objects.
+		myfile.seek(0)			resets the file counter to the file head.
+		myfile.readlines()		returns the file as a list with the lines as objects.
 		myfile.write('<content>')	writes <content> to file.
-		myfile.close()				closes the file.		
+		myfile.close()			closes the file.		
 	> The **.read methods** leave the file counter at the end of the file. It has to be reset before reading the file again using the **.seek(0)** method.
 			
 * File **modes** and **permissions** are set with the additional syntax, `mode='mode'`, e.g.
@@ -496,7 +497,7 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		FOUR ON FOURTH
 
 ---
-####Interview Prep Resources
+#### Interview Prep Resources
 
 * [Basic practice](https://codingbat.com/python)
 * [Mathematical practice](https://projecteuler.net/archives)
@@ -507,6 +508,8 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 ---
 
 #### Lessons 28-30. Practice resources and section tests
+
+* download the notebook to take the exam.
 
 
 	
