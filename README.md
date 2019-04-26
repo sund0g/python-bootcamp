@@ -6,6 +6,8 @@ Coursework and notes from [Udemy](https://www.udemy.com/complete-python-bootcamp
 * [Section 1: Course Overview](#1)
 * [Section 2: Python setup](#2)
 * [Section 3: Python Object and Data Structure Basics](#3)
+* [Section 4: Python Comparison Operators](#4)
+* [Section 5: Statements](#5)
 
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
@@ -511,5 +513,124 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 * download the notebook to take the exam.
 
+<a name="4"></a>
+## Section 4: Python Comparison Operators
 
+#### Lesson 31. Comparison Operators
+
+Operator|Description|Example
+---|---|---
+==|If the values of two operands are equal, then the condition becomes true.|(a == b) is not true.
+!=|If values of two operands are not equal, then condition becomes true.|(a != b) is true.
+<>|If values of two operands are not equal, then condition becomes true.|(a <> b) is true. This is similar to != operator.
+\>|If the value of left operand is greater than the value of right operand, then condition becomes true.|(a > b) is not true.
+<|If the value of left operand is less than the value of right operand, then condition becomes true.|(a < b) is true.
+/>=|If the value of left operand is greater than or equal to the value of right operand, then condition becomes true|(a >= b) is not true.
+<=|If the value of left operand is less than or equal to the value of right operand, then condition becomes true.|(a <= b) is true.
+
+#### Lesson 32. Chaining Comparison Operators with Logical Operators
+
+Operator|Description|Example
+---|---|---
+and/AND|If both the operands are true then condition becomes true.|(a and b) is true.
+or/OR|If any of the two operands are non-zero then condition becomes true.|(a or b) is true.
+not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
+
+<a name="5"></a>
+## Section 5: Statements
+
+#### Lesson 33. If Elif and Else Statements
+
+* Control flow syntax uses **:** and **indentation (whitespace)**, e.g.
+
+		if condition:
+			# code block
+		elif:
+			# code block
+		else:
+			# code block
+
+#### Lesson 34. For Loops
+			
+* Most of **objects** in Python are **iterable**.
+* **for** syntax is,
+		
+		for <every_item> in <some_sequence>:
+			# code block
+
+* **'_'** can be subsituted for \<every_item\> if no action is taken on \<every_item\>, e.g.
+
+		for _ in (1, 2, 3):
+			print ('Hi!')
+			
+		returns
+		
+		'Hi!'
+		'Hi!'
+		'Hi!'
+		
+* **Unpacking** or iterating over every data object in another data object can be useful, e.g.
+
+		list_of_tuples = [(1, 2), (3, 4)]
+		
+		for a,b in my_list1:
+			print (f'{a} \n{b}')
+			
+		returns
+		1
+		2
+		3
+		4
+		
+		---
+		
+		my_dictionary = {'k1':1, 'k2':'Hello!', 'k3': 3.25}
+		
+		for item in my_dictionary:
+			print (item)
+			
+		returns
+		
+		k1
+		k2
+		k3
+		
+* Note: this only returns the keys. To return the corresponding values, use the [**.items()**](https://docs.python.org/3/tutorial/datastructures.html#looping-techniques) method.
+		
+		for key,value in my_dictionary.items():
+			print (f'key = {key} value = {value}')
+			
+		returns
+		
+		key = k1 value = 1
+		key = k2 value = Hello!
+		key = k3 value = 3.25
+		
+* To only return the values, use the [**.values()**](https://www.tutorialspoint.com/python/dictionary_values.htm) method.
+
+		for value in my_dictionary.values():
+			print (f'value = {value}')
+			
+		returns
+		
+		value = 1
+		value = Hello!
+		value = 3.25
+		
+* This has nothing to do with **looping**, but if all is needed are the dictionary values, 
+
+		print (f'values = {my_dictionary.values()}')
 	
+		returns
+		
+		values = dict_values([1, 'Hello!', 3.25])
+		
+---
+
+#### Takeaway
+* **Unpacking** is common in Python
+
+---
+
+#### Lesson 35. While Loops
+
