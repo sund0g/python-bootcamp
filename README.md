@@ -712,3 +712,4 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 **NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
 
+
