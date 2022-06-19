@@ -1,6 +1,8 @@
 # Complete Python Bootcamp
 Coursework and notes from [Udemy](https://www.udemy.com/complete-python-bootcamp/)
 
+The exercises of the course are on Github here: [https://github.com/Pierian-Data/Complete-Python-3-Bootcamp](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp)
+
 ### Table of Contents
 
 * [Section 1: Course Overview](#1)
@@ -509,14 +511,14 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 
 ---
 
-#### Lessons 28-30. Practice resources and section tests
+#### Lessons 28-31. Practice resources and section tests
 
 * download the notebook to take the exam.
 
 <a name="4"></a>
 ## Section 4: Python Comparison Operators
 
-#### Lesson 31. Comparison Operators
+#### Lesson 32. Comparison Operators
 
 Operator|Description|Example
 ---|---|---
@@ -528,7 +530,7 @@ Operator|Description|Example
 />=|If the value of left operand is greater than or equal to the value of right operand, then condition becomes true|(a >= b) is not true.
 <=|If the value of left operand is less than or equal to the value of right operand, then condition becomes true.|(a <= b) is true.
 
-#### Lesson 32. Chaining Comparison Operators with Logical Operators
+#### Lesson 33. Chaining Comparison Operators with Logical Operators
 
 Operator|Description|Example
 ---|---|---
@@ -539,7 +541,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 <a name="5"></a>
 ## Section 5: Statements
 
-#### Lesson 33. If Elif and Else Statements
+> All examples in this section are contained in the Jupyter notebook.
+
+#### Lesson 34. If Elif and Else Statements
 
 * Control flow syntax uses **:** and **indentation (whitespace)**, e.g.
 
@@ -550,7 +554,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		else:
 			# code block
 
-#### Lesson 34. For Loops
+#### Lesson 35. For Loops
 			
 * Most of **objects** in Python are **iterable**.
 * **for** syntax is,
@@ -632,5 +636,79 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
-#### Lesson 35. While Loops
+#### Lesson 36. While Loops
+
+* **While** loop syntax uses **:** and **indentation (whitespace)**, e.g.
+
+		while <boolean condition>:
+			# code block
+		else:
+			# code block
+			
+* There are three **keywords** that can be useful with while loops,
+
+	Keyword|Description
+	---|---|---
+	**break**|Breaks out of the current closest enclosing loop.
+	**continue**|Goes to the top of the closest enclosing loop.
+	**pass**|Does nothing. This may be useful when getting the flow logic in place.
+
+
+> It’s easy to create infinite while loops by forgetting to put in the iterator, e.g. x +=1. If this happens while running the loop in a Jupyter notebook, select **Kernel** and **Interrupt** from the dropdown menu at the top of the notebook.
+
+#### Lesson 37. Useful Operators in Python
+
+* The following are a few useful keywords that don’t really fit into any of the previous categories.
+
+ Operator|Description
+	---|---|---
+	**range**|Generates a range of items as specified in the parameters.
+	**enumerate**|Generates tuples from the items in a iterable.
+	**zip**|Combines multiple lists into a single list. **Note** zip does not return an error with uneven lists, it ignores the extra items.
+	**in**|Checks if an item is in an iterable.
+	**min**|Returns the minimum value in an iterable.
+	**max**|Returns the maximum value in an iterable.
+	**shuffle**|Randomly shuffles items in an iterable. This is an **in place** function; it doesn’t return anything.
+	**randint**|returns a random integer.
+	**input**|asks for an input from user. **Note:** input only returns a string. Cast to get a non-string type.
+	
+> Some of these functions generate data, but do not store it, so can be more efficient. Will discuss in detail in Section 13.
+
+#### Lesson 38. List Comprehensions in Python
+
+* List comprehensions can quickly create a list.
+* If you find yourself using a **for** loop with **.append()** to create lists, **list comprehensions** are a great alternative.
+
+> All examples are in the accompanying Jupyter notebook **section-5.ipynb**
+
+* List comprehensions do not save compute time. **They also do not always lend themselves to readability which should always be paramount when writing code.**
+
+
+#### Lessons 39-40. Python Statements Test and Solutions
+
+* Here is the test: [https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/02-Python%20Statements/07-Statements%20Assessment%20Test.ipynb](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/02-Python%20Statements/07-Statements%20Assessment%20Test.ipynb)
+
+* Test solutions: [https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/02-Python%20Statements/08-Statements%20Assessment%20Test%20-%20Solutions.ipynb](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/02-Python%20Statements/08-Statements%20Assessment%20Test%20-%20Solutions.ipynb)
+
+---
+#### Interview question
+
+* Classic “FizzBuzz” question
+	* Write a program that prints the integers from 1 to 100. 
+	* For multiples of three, print “Fizz” instead of the number.
+	* For multiples of five, print “Buzz” instead of the number.
+	* For numbers which are both multiples of three and five, print “Fizzbuzz” instead of the number.
+* 
+
+		for num in range(0,101):
+			if num%3 == 0 and num%5 == 0:
+				print(‘FizzBuzz’)
+			elif num%3 == 0:
+				print(‘Fizz’)
+			elif num%5 == 0:
+				print(‘Buzz’)
+			else:
+				print(num)
+
+**NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
 
