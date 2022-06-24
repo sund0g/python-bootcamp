@@ -10,6 +10,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 3: Python Object and Data Structure Basics](#3)
 * [Section 4: Python Comparison Operators](#4)
 * [Section 5: Statements](#5)
+* [Section 6: Methods and Functions](#6)
 
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
@@ -711,5 +712,133 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 				print(num)
 
 **NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
+---
+
+<a name=“6”></a>
+## Section 6: Methods and Functions
+
+#### Lesson 41. Methods and the Python Documentation
+
+> All examples are in the accompanying Jupyter notebook section-6.ipynb
+
+* **Methods** are functions that are built into objects, e.g.
+
+		myList = [1,2,3]
+		
+		myList.append(4)		# append method adds 4 to the list.
+	
+		myList.pop()			# pop method removes the last item in the list.
+		
+* To show the available methods for a particular **iterable** in a **jupyter notebook**, type in the iterable and ‘.’ and *tab*. This will show a dropdown list of available methods. **Note: this doesn’t work for me.**
+
+* To show the method’s **help** syntax in a **jupyter notebook**, type in the method and then *shift + tab*.
+
+* If running in a script or on the Python command line, use
+
+		help(myList.<method>)
+		
+* The full help documentation is at the [official Python documentation](https://docs.python.org/3/) site.
+
+#### Lesson 42. Introduction to Functions
+
+* **Functions** are blocks of code that can be easily executed many times without needing to rewrite the code each time.
+
+#### Lesson 43. def Keyword
+
+* Syntax: **def function_name():**
+
+> In general, Python uses **snake casing** which means all lowercase words separated by underscores. OO class calls generally use **camel casing**.
+
+* Optionally a **multi-line string** describing the function can be added as follows,
+
+		def my_function():
+			‘’’	multi-line ‘docstring’
+				function description
+			‘’’
+			
+			function code...
+					
+> My preference is to use ‘#’ for all comments to maintain consistency. Note this is single-line only, so every comment line must have this at the start of line.
+
+* Everything after the ‘:’ that is part of the function must be indented.
+
+* In general, a function will return a value via the **return** keyword, e.g.
+
+		def add_function(number1, number2):
+			return number1 + number2
+
+#### Lesson 44. Basics of Python functions
+
+* Executing a Python function requires appending **()** to the function name. Omitting the **()** simply verifies the function name, e.g.
+
+		> my_function
+		>
+		> <function __main__.my_function>
+		
+* The difference between **print** and **return** is that **print** simply prints out a value. **return** assigns the value to a variable which can then be used later by other functions.
+
+* Python is dynamically typed, which can cause issues, (see takeaways), e.g.
+
+		def sum_numbers(number1, number2):
+			return number1 + number2
+			
+		>sum_numbers(10, 20)
+		> 30
+		>
+		>sum_numbers(’10’, ’20’)
+		> ‘1020’
+
+> ‘+’ **adds** numbers, and **concatenates** strings.
+
+ ---
+ **Takeaways**
+ 
+ * Python is dynamically typed, (unlike C or C++ which are statically typed). This means function parameters do not have to be type-checked when passed into the function. However, this can cause unexpected side effects, so adding type checking is a generally accepted principle. An example of how to do this will be shown later.
+
+ * **Another generally accepted principle is to only have a single “return” per function. While having multiple returns, e.g. in an if-else statement will not generate a syntax error, this is considered poor design.**
+
+ ---
+
+#### Lesson 45. Logic with Python Functions
+
+* Checking for even numbers examples are all in the Jupyter notebook, section-6.ipynb, lesson 45.
+
+#### Lesson 46. Tuple Unpacking with Python Functions
+
+* Unpacking employee of the month data example is in the Jupyter notebook, section-6.ipynb, lesson 46.
+
+#### Lesson 47. Interactions between Python functions
+
+* Create some functions that mimic, [Three Card/Cup Monte](https://en.wikipedia.org/wiki/Three-card_Monte).
+	* The example will not show the cards/cups, but will be mimicked with a Python list.
+	* The cards/cups will not be shuffled, so the guess will be completely random.
+
+* The shuffle will be mimicked using the Python [shuffle](https://docs.python.org/3/library/random.html#random.shuffle) method from the [random](https://docs.python.org/3/library/random.html) module
+
+* **Step 1**: Mimic the shuffle. [shuffle](https://docs.python.org/3/library/random.html#random.shuffle) is an **in place** function, so have to create a shuffle function.
+
+* **Step 2**: Get the player’s guess.
+
+* **Step 3**: Check the player’s guess, and check if it matches the shuffled list.
+
+* **Step 4**: Create a script that calls all the functions.
+
+
+---
+**Takeaways**
+
+* The **input** function only returns strings, so may have to cast the returned variable if something other than a string is needed.
+---
+
+#### Lesson 48. Overview if Quick Function Exercises
+
+* Review only, no notes taken.
+
+
+
+
+
+
+
 
 
