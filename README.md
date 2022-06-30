@@ -830,15 +830,218 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * The **input** function only returns strings, so may have to cast the returned variable if something other than a string is needed.
 ---
 
-#### Lesson 48. Overview if Quick Function Exercises
+#### Lesson 48. Overview of Quick Function Exercises
 
 * Review only, no notes taken.
 
+#### Lesson 49. \*args and \*\*kwargs in Python
+
+* **\*args** and **\*\*kwargs** provide a method to pass in a variable set of arguments to a function, e.g.
+
+		some_function(a, b)	# a, and b are “positional” arguments, meaning they must be
+							# provided in the proper order when calling the function.
+							
+		some_other_fucntion(*args)	# Any number of variables may be passed into the function.
+
+* [geeksforgeeks](https://www.geeksforgeeks.org/args-kwargs-python/) has a description for these.
+
+* **\*args** builds a tuple out of the variable set of arguments.
+
+* **\*\*kwargs** builds a [dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) out of the variables passed into the function. 
+
+---
+**Takeaways**
+
+* **\*args** returns a [**tuple**](https://www.geeksforgeeks.org/python-tuples/)
+
+* **\*\*kwargs** returns a [**dictionary**](https://www.geeksforgeeks.org/python-dictionary/)
+
+* There is nothing special about *\*args* or *\*\*kwargs*, it can be anything for readability, but it must be denoted by the **\***. However, it is standard convention to use **args**.
+
+* In the first example, [sum()](https://docs.python.org/3/library/functions.html#sum) is used. This function only accepts iterables. Integers are not accepted.
+
+* **\*args** and **\*\*kwargs** are most useful when using external libraries.
+
+#### Lessons 50, 51, 52, 53, 54. Function Practice Exercises
+
+* Course [solutions](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/04-Function%20Practice%20Exercises%20-%20Solutions.ipynb) for review as needed.
+
+> My solutions to these problems are in the Jupyter notebook **section-6.ipynb**
 
 
+---
+**Takeaways**
 
+* Get in the habit of writing code. Even the simplest problems take forever if you are out of practice.
 
+* The string method [.join](https://www.geeksforgeeks.org/python-string-join-method/) is introduced
 
+* The [absolute value](https://en.wikipedia.org/wiki/Absolute_value) method [abs()](https://www.geeksforgeeks.org/abs-in-python/) is introduced
+
+* Check out the [Euler project](https://projecteuler.net/) for more challenging math problems solved with code.
+
+---
+
+#### Lesson 55. Lambda Expressions, Map, and Filter Functions
+
+> All examples are in the accompanying Jupyter notebook section-6.ipynb
+
+* [**Lambda Expressions**](https://docs.python.org/3/reference/expressions.html#lambda) are a way to create what are known as [**anonymous functions**](https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/)
+
+	> Lambda functions are basically one-time use functions. They are used once and then never referenced again.
+
+* [**map**](https://www.geeksforgeeks.org/python-map-function/) and [**filter**](https://www.geeksforgeeks.org/filter-in-python/) must be understood in order to understand **Lambda** functions.
+
+* [**map(function, iterable)**](https://docs.python.org/3/library/functions.html#map) function takes as inputs a function and an iterable. It then applies the function to each item in the iterable, e.g.
+
+		def square(number):
+			return number**2
+			
+		myNumberList = [1, 2, 3, 4, 5]
+		
+		list(map(square, myNumberList))
+		
+		# returns [1, 4, 9, 16, 25]
+
+* [**filter(function, iterable)**](https://docs.python.org/3/library/functions.html#filter) executes a function on each item in an iterable, and returns the items for which the function returns **True**, e.g.
+
+		def check_even(number):
+			return number % 2 == 0
+			
+		myNumbers = [1, 2, 3, 4, 5, 6]
+
+		list(filter(check_even, myNumbers))
+		
+		# returns [2, 4, 6]
+		
+	> Functions passed into map() and filter() do not include **()** because map will execute them.
+	
+* To show how [**Lambda**](https://docs.python.org/3/reference/expressions.html#lambda) functions are useful, and connect **map()**, **filter()**, and **lambdas** together, we will convert one of the previous simple functions to a Lambda function, e.g.
+
+		 
+		# Regular function
+		
+		def square(number):
+			return number**2
+			
+		# Written as a lambda function
+		
+		lambda number: number ** 2
+		
+		
+* Combining the lambda with map() looks like,
+
+		list(map(lambda number: number**2, [1, 2, 3, 4]))
+		
+		# returns [1, 4, 9, 16]
+
+* Combining the lambda with filter() looks like,
+
+		list(filter(lambda number: number % 2 == 0, [1, 2, 3, 4, 5, 6]))
+		
+		# returns [2, 4, 6]
+		
+	> Lambdas are very useful in single-use scenarios rather than creating a function as shown in the previous examples square() and check_even().
+	
+---
+**Takeaways**
+
+* Lambda functions can become quite complex. Keep in mind that not all functions are appropriate to define as lambdas because they will be hard to read.
+
+---
+
+#### Lesson 56. Nested Statements and Scope
+
+* Python variables are given a [**namespace**](https://www.geeksforgeeks.org/namespaces-and-scope-in-python/) and [**scope**](https://www.geeksforgeeks.org/namespaces-and-scope-in-python/)
+
+* The following example demonstrates variable **scope**,
+
+		number = 25
+		
+		def printNumber():
+			number = 50
+			return number
+			
+		print (number)
+		
+		# What is number?
+		#
+		# It is 25 because number as defined inside printNumber() has a scope that only
+		# exists while inside printNumber(), e.g.
+		
+		print(printNumber())		# returns 50
+		
+* Python uses the [**LEGB Rule**](https://www.geeksforgeeks.org/scope-resolution-in-python-legb-rule/) format to determine scope of variables.
+
+	* **L: Local** - Names assigned in any way within a function (def or lambda) and not declared global in that function.
+	* **E: Enclosing function locals** - Names in the local scope of any and all enclosing functions (def or Lambda), from inner to outer.
+	* **G: Global (module)** - Names assigned at the top-level of a module file, or declared global in a def within the file.
+	* **B: Built-in (Python)** - Names preassigned in the built-in names module, e.g. **open**, **range**, **SyntaxError**, etc.
+
+* Some examples,
+
+		# L: Local
+		
+		lambda num: num\*\*2	# num is local to the lambda function
+		
+		# E: Enclosing
+		
+		name = “This is a global string”
+		
+		def greet():
+		
+			name = “Sammy”
+			
+			def hello():
+				print (“hello ”+name)
+				
+			hello()
+			
+		greet()					# name is “Sammy”
+		
+* Sometimes a function may want to modify a global variable. This is done with the [**global**](https://docs.python.org/3/reference/simple_stmts.html#grammar-token-python-grammar-global_stmt), e.g.
+
+		x = 50
+		
+		def myFunc():
+		
+			global x
+			
+			print(f”x = {x}”)
+			
+			# local reassignment of global variable
+			x = 200
+			
+			print(f”x changed to {x}”)
+			
+			
+		# Calling myFunc() returns,
+		#	x = 50
+		#	x changed to 200
+		
+---
+**Takeaways**
+
+* Never overwrite **built-in functions/variables**.
+* The use of **global** to change global variables inside of functions is not recommended. The general convention is to pass in global variables, operate on them, and **return** them.
+
+	> Using **global** in complex functions can cause global variables to be inadvertently modified, which can be challenging to debug.
+
+---
+
+#### Lessons 57 and 58. Methods and Functions Homework
+
+* Course [solutions](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/09-Functions%20and%20Methods%20Homework%20-%20Solutions.ipynb) for review as needed.
+
+> My solutions to these problems are in the Jupyter notebook **section-6.ipynb**
+
+---
+
+**Takeaways**
+
+* Use the [**set**](https://www.geeksforgeeks.org/python-set-method/) method to quickly return a list of unique elements in an iterable, (Homework 4).
+
+---
 
 
 
