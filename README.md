@@ -11,6 +11,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 4: Python Comparison Operators](#4)
 * [Section 5: Statements](#5)
 * [Section 6: Methods and Functions](#6)
+* [Section 7: Milestone Project - 1](#7)
 
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
@@ -294,9 +295,12 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		returns Scott is 42 years old
 			
 ---
-### Takeaway
+####Takeaways
 
 * Additional resource for string formatting: https://pyformat.info/
+* [**casefold()**](https://www.geeksforgeeks.org/case-insensitive-string-comparison-in-python/) is preferred over **lower()** and **upper()** when dealing with non-english languages because upper and lower case characters may not be the same, e.g.
+
+		German ‘β’ (upper) is ‘ss’ (lower)
 
 ---
 
@@ -539,6 +543,7 @@ and/AND|If both the operands are true then condition becomes true.|(a and b) is 
 or/OR|If any of the two operands are non-zero then condition becomes true.|(a or b) is true.
 not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
+
 <a name="5"></a>
 ## Section 5: Statements
 
@@ -714,7 +719,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 **NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
 ---
 
-<a name=“6”></a>
+<a name="6"></a>
 ## Section 6: Methods and Functions
 
 #### Lesson 41. Methods and the Python Documentation
@@ -791,7 +796,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > ‘+’ **adds** numbers, and **concatenates** strings.
 
  ---
- **Takeaways**
+####Takeaways
  
  * Python is dynamically typed, (unlike C or C++ which are statically typed). This means function parameters do not have to be type-checked when passed into the function. However, this can cause unexpected side effects, so adding type checking is a generally accepted principle. An example of how to do this will be shown later.
 
@@ -823,11 +828,11 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * **Step 4**: Create a script that calls all the functions.
 
-
 ---
-**Takeaways**
+####Takeaways
 
 * The **input** function only returns strings, so may have to cast the returned variable if something other than a string is needed.
+
 ---
 
 #### Lesson 48. Overview of Quick Function Exercises
@@ -841,7 +846,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		some_function(a, b)	# a, and b are “positional” arguments, meaning they must be
 							# provided in the proper order when calling the function.
 							
-		some_other_fucntion(*args)	# Any number of variables may be passed into the function.
+		some_other_function(*args)	# Any number of variables may be passed into the function.
 
 * [geeksforgeeks](https://www.geeksforgeeks.org/args-kwargs-python/) has a description for these.
 
@@ -870,7 +875,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 
 ---
-**Takeaways**
+####Takeaways
 
 * Get in the habit of writing code. Even the simplest problems take forever if you are out of practice.
 
@@ -944,7 +949,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	> Lambdas are very useful in single-use scenarios rather than creating a function as shown in the previous examples square() and check_even().
 	
 ---
-**Takeaways**
+####Takeaways
 
 * Lambda functions can become quite complex. Keep in mind that not all functions are appropriate to define as lambdas because they will be hard to read.
 
@@ -982,7 +987,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 		# L: Local
 		
-		lambda num: num\*\*2	# num is local to the lambda function
+		lambda num: num**2	# num is local to the lambda function
 		
 		# E: Enclosing
 		
@@ -1020,7 +1025,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		#	x changed to 200
 		
 ---
-**Takeaways**
+####Takeaways
 
 * Never overwrite **built-in functions/variables**.
 * The use of **global** to change global variables inside of functions is not recommended. The general convention is to pass in global variables, operate on them, and **return** them.
@@ -1036,12 +1041,103 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > My solutions to these problems are in the Jupyter notebook **section-6.ipynb**
 
 ---
-
-**Takeaways**
+####Takeaways
 
 * Use the [**set**](https://www.geeksforgeeks.org/python-set-method/) method to quickly return a list of unique elements in an iterable, (Homework 4).
 
 ---
+
+<a name="7"></a>
+## Section 7: Milestone Project - 1
+
+> All examples are in the accompanying Jupyter notebook **section-7.ipynb**
+
+#### Lesson 59: Introduction to Warm Up Project Exercises
+
+* Most interactive programs work in this simple idea:
+
+	* Display something visual to the user
+	* Let user update via an interaction
+	* Update variables in the program
+	* Display updated visual
+
+* The following lessons show how to perform these tasks with Python. We will emulate a [tic-tac-toe game](https://en.wikipedia.org/wiki/Tic-tac-toe)
+
+#### Lesson 60. Displaying Information
+
+* Use a **def** custom function along with **print** to show something like a board game to the user.
+
+#### Lesson 61. Accepting User Input
+
+* Using the [input()](https://docs.python.org/3/library/functions.html#input) to accept the user input.
+
+> Note: When executing an **input** command in a **Jupyter notebook** select **shift** + **return**
+
+---
+####Takeaways
+
+* Remember, the **input()** function only returns strings. If int or float are needed, cast the result of the input.
+
+* If the **input** command is executed from a **Jupyter notebook**, and the user doesn’t actually enter a value, all subsequent commands in the notebook will wait until a value is entered before they can be executed. 
+
+* If the user “accidentally” selects **shift** + **return** without entering a value, the Jupyter notebook **kernel** must be restarted via **Kernel** | **Restart** before any subsequent commands can be executed.
+
+	> This will null out all previous values. Select **Cell** | **Run All** to repopulate the variables.
+
+---
+
+#### Lesson 62. Validating User Input
+
+* The next step is to validate the user input to void errors and unintended side effects.
+
+* There are several method to determine if input is valid,
+	* (isdigit()](https://docs.python.org/3/library/stdtypes.html#str.isdigit) Using this for the project.
+	* [Try|Except](https://docs.python.org/3/tutorial/errors.html#handling-exceptions)
+	* Simple loops
+
+#### Lesson 63. Simple User Interaction
+
+* Put the previous lessons together into a simple user interaction,
+	* Display a list
+	* Input an index position and a variable
+	* replace list value at the index position with the user’s input variable
+	* **Also, check if the user wants to exit out at any time**
+
+#### Lessons 64 - 67. First Python Milestone Project
+
+* Take what has been learned in the previous lessons and create a Python program to emulate a tic-tac-toe game for 2 human players.
+
+* The instructor’s solutions can be reviewed [here](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/04-Milestone%20Project%20-%201) on gitHub.
+
+* Objectives for the game are,
+
+	* 2 players should be able to play the game while sitting at the same computer.
+	* The board should be updated and displayed after every player move.
+	* The program will accept input of player position and place a symbol on the board.
+	* The board will emulate a **numpad** for the positions, e.g.
+
+			7|8|9
+			4|5|6
+			1|2|3
+			
+* The functions and design comments are all in the Jupyter notebook, **section-7.ipynb**
+
+---
+####Takeaways
+
+* To populate an empty list, do the following,
+
+		myList = [‘ ‘] * <how any elements needed>
+		
+* The player info, (which player is X and which is O) can be stored as a **tuple** because we don’t want their values to change.
+
+* The solution is implemented with a 1D array, (list). Check out how to do this with a [**2D array, (list)**](https://www.geeksforgeeks.org/python-using-2d-arrays-lists-the-right-way/).
+
+* **DON’T** get messed up with the **0 vs 1** starting index. This will waste hours of time debugging the logic when you get it wrong. Make it simple create a 10 space list, and start the index at 1. This way the index position will never be 0, which will cause issues the first time the logic executes.
+
+---
+
+
 
 
 
