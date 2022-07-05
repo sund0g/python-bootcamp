@@ -12,7 +12,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 5: Statements](#5)
 * [Section 6: Methods and Functions](#6)
 * [Section 7: Milestone Project - 1](#7)
-
+* [Section 8: Object Oriented Programming](#8)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -1137,7 +1137,127 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+<a name=“8"></a>
+## Section 8: Object Oriented Programming
 
+#### Lesson 68. Object Oriented Programming - Introduction
 
+> All examples are in the accompanying Jupyter notebook **section-8.ipynb**
 
+* OOP allows developers to create objects that have methods and attributes.
+* These methods act as **functions** that use information about ab object, as well as the object itself, to return results or change the object, e.g **appending to a list** or **counting occurrences of an element in a tuple.**
+* In general, OOP provides a way to create code that is **repeatable** and **organized**.
+* an exampe of OOP syntax is,
 
+		class NameOfClass():
+		
+		def __init__(self, param1, param2):
+		   self.param1 = param1
+		   self.param2 = param2
+		
+		def some_methods(self):
+		   #perform some action
+		   print(self.param1)
+		   
+> **Objects** and **Classes** nomenclature are interchangeable. They mean the same thing.
+> **Functions** are called **methods** when they are part of a **class**.
+
+* Breaking down the above example,
+	* **def** is called a **method** when inside a class.
+	* [**__init__**](https://docs.python.org/3/tutorial/classes.html#class-objects) is the class **constructor**.
+	* [**self**](https://docs.python.org/3/tutorial/classes.html#class-objects) is how the instantiated object refers to itself.
+	* **self.param** links the passed in parameter to the object instance. 
+	* Passing **self** to the class methods tells us the method is not random, but belongs to the class.
+ 
+#### Lesson 69. Object Oriented Programming - Attributes and Class Keyword
+
+* Use the **class** keyword to create a user defined object.
+* **Classes** have **attributes** and **methods**, e.g.
+	* an **attribute** of **class Dog()** could be **breed**.
+	* a **method** of the class could be **walk()**.
+
+* By convention **attributes** are the same name, e.g.
+
+		class Dog():
+		  def __init__(self, breed)
+		     self.breed = breed
+		     
+* Attributes can be of any type. 
+
+---
+####Takeaways
+
+* By convention classes are **CamelCase**
+
+> [Here](https://peps.python.org/pep-0008/) is an example style guide for Python.
+
+* Classes and their methods should generally have a [**docstring](https://www.geeksforgeeks.org/python-docstrings/) to help with usage.
+
+---
+
+#### Lesson 70. Object Oriented Programming - Class Object Attributes and Methods
+
+* **Class object attributes** will be the same for any instance of the class, e.g.
+
+		class Dog():
+		
+		  # Class object attribute
+		  # will be the same for any instance
+		  # does NOT refer to self because is the same for any instance.
+		  genus = “canis”
+		
+		  def __init__(self, breed)
+		     self.breed = breed	
+		     
+* **Methods** are functions defined inside the body of a class.
+	* They are used to perform operations, sometimes on the attributes of the instantiated object.
+	* They can also take user arguments
+
+	Example
+	
+		class Dog():
+		
+		  def __init__(self, breed)
+		     self.breed = breed	
+		     
+		  def say_number(self, number):
+		     print(“WOOF! The number is {}”.format(number))
+		     
+* **Attributes** can be passed in as parameters, e.g.
+
+		class Circle():
+    
+    		# Class object attribute
+    		pi = 3.14
+    
+    		# Constructor class
+    		def __init__(self, radius=1): # giving radius a default value
+        
+        	self.radius = radius
+        
+        	# Example of an attribute passed in as a parameter
+        	self.area = self.pi * (radius **2)
+        	
+* **Class object attributes** may also be reference by their class name, e.g.
+
+		class Circle():
+    
+		    # Class object attribute
+		    pi = 3.14
+		    
+		    # Constructor class
+		    def __init__(self, radius=1): # giving radius a default value
+		        self.radius = radius
+		    
+		    # Class method
+		    def get_circumference(self):
+		    
+		    	 # Class object attribute referenced by class name 
+		        return 2 * Circle.pi * self.radius	
+
+---
+####Takeaways
+
+* **Attributes** are informational only. They are not called with **()**.
+* By convention, **class object attributes** are referenced by their **class name** because they will always be the same for any instance, and it make it easier for others to read.
+* **Methods** will perform an action, and must be called with **()**.
