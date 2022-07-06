@@ -1261,3 +1261,131 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * **Attributes** are informational only. They are not called with **()**.
 * By convention, **class object attributes** are referenced by their **class name** because they will always be the same for any instance, and it make it easier for others to read.
 * **Methods** will perform an action, and must be called with **()**.
+
+---
+
+#### Lesson 71. Object Oriented Programming - Inheritance and Polymorphism
+
+* [**Inheritance**](https://www.w3schools.com/python/python_inheritance.asp) basically means the ability to create new classes from classes that are already defined.
+* A **child** class can **derive** methods and attributes from another class called the **parent** or **base** class, e.g.
+
+
+		class ParentClass():
+			
+			def __init__(self):
+			
+		---
+		
+		class ChildClass(ParentClass):
+		
+			def __init__(self):			# Child class constructor
+			
+				ParentClass.__init__(self)	# also need to create an instance of the derived class
+
+
+* Another example,
+  
+
+		# Base/Parent class
+		
+		class Animal():
+    
+    		def __init__(self):
+        
+        		print("Animal created")
+        
+	    def who_am_i(self):
+	        print(“I am an aminal”)
+	        
+	    def eat(self):
+	        print(“I am eating”)
+	    
+	    --- 
+	        
+	    # Derived/Child class
+	    
+	    class Dog(Animal):				# Class Dog() inherits methods/attributes from class Animal()
+	    
+	    	def __init__(self):
+	    	
+	    		Animal.__init__(self)	# Create an instance of the parent class
+	    		print(“Dog created”)
+	    		
+* Child classes can **override** parent class methods and attributes, as needed, e.g.
+
+		# Derived/Child class
+
+		class Dog(Animal):              
+	    def __init__(self):
+	
+	        Animal.__init__(self) 
+	        print(“Dog created”)
+	    
+	    # Parent class method override
+	        
+	    def who_am_i(self):
+	    	print(“I am a dog”)
+	    	
+
+* [**Polymorphism**](https://www.geeksforgeeks.org/polymorphism-in-python/) refers to the way that different **object methods** can share the same name.
+
+* A simple example of polymorphism is,
+
+		class Dog():
+    
+		    def __init__(self, name):
+		        self.name = name
+		        
+		    def speak(self):
+		        return f”WOOF! My name is {self.name}”
+	
+		---
+		
+		class Cat():
+    
+		    def __init__(self, name):
+		        self.name = name
+		        
+		    def speak(self):
+		        return f”MEOW! My name is {self.name}”
+		        
+		---
+		
+* Both classes contain the “speak()” method. Each method is unique to its respective class, but it has the same name. this means the **speak()** method is **polymorphic**.
+
+* [**Abstract classes**](https://www.geeksforgeeks.org/abstract-classes-in-python/) can be used as a **base class** for child classes. **ABS** classes are not instantiated.
+
+> Refer to the ABS example in the Jupyter notebook **section-8.ipynb**.
+
+> A real world example of an **ABS** class could be a **File** class with an **open** method. **Subclasses** based on the file types would then use the ABS class to open files the same way.
+
+
+---
+####Takeaways
+
+* **Functions** can take in different arguments. **Methods** belong to the **objects** they act on.
+* **Sub classes** do not need a **constructor** class if they use an **Abstract class**. They will use the constructor from the **ABS** class.
+
+---
+
+#### Lesson 72. Object Oriented Programming - Special (Magic/Dunder) Methods
+
+* Special methods called [**Magic/Dunder**](https://www.geeksforgeeks.org/dunder-magic-methods-python/) allow us to emulate **built-in** functions with our **user-defined objects**.
+
+
+#### Lessons 73 and 74. Object Oriented Programming - Homework
+
+* The homework problems are in the coursework [**here**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/05-Object%20Oriented%20Programming/02-Object%20Oriented%20Programming%20Homework.ipynb)
+
+---
+####Takeaways
+
+* Most class methods will take in **iterables**, so get comfortable,
+	* unpacking tuples
+	* parsing lists, dictionaries, sets, etc.
+
+---
+
+#### Lessons 75 and 76. Object Oriented Programming - Challenge
+
+* The challenge problem is in the coursework [**here**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/05-Object%20Oriented%20Programming/04-OOP%20Challenge.ipynb)
