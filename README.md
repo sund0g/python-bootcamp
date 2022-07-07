@@ -13,6 +13,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 6: Methods and Functions](#6)
 * [Section 7: Milestone Project - 1](#7)
 * [Section 8: Object Oriented Programming](#8)
+* [Section 9: Modules and Packages](#9)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -1137,7 +1138,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
-<a name=“8"></a>
+<a name="8"></a>
 ## Section 8: Object Oriented Programming
 
 #### Lesson 68. Object Oriented Programming - Introduction
@@ -1389,3 +1390,30 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 #### Lessons 75 and 76. Object Oriented Programming - Challenge
 
 * The challenge problem is in the coursework [**here**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/05-Object%20Oriented%20Programming/04-OOP%20Challenge.ipynb)
+
+---
+
+<a name="9"></a>
+## Section 9: Modules and Packages
+
+#### Lesson 77. Pip Install and PyPi
+
+* [**PyPi**](https://pypi.org/) is a repository for open-source, third-party Python packages, (similar to npm for node.js).
+* [**pip**](https://packaging.python.org/en/latest/tutorials/installing-packages/) can be used to install Python packages.
+* [**Anaconda**](https://www.anaconda.com/products/distribution) can be used as well, most often with Data Science packages.
+
+> I did not install the [**colorama**](https://pypi.org/project/colorama/) package as shown in the lesson.
+
+---
+####Takeaways
+
+* Type **quit()** to exit the Python command line from a terminal window. (I tend to forget this).
+
+* Use a web-based search to search for Python packages.
+
+---
+
+#### Lesson 78. Modules and Packages
+
+* 
+ 
