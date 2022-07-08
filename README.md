@@ -1415,5 +1415,130 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 78. Modules and Packages
 
-* 
- 
+* **Modules** are just **.py scripts** that are called in another .py script.
+* **Packages** are a collection of **modules**.
+
+* all example script files can be found in the directory **section-9**.
+
+> Part of the lessons will be to create these files from an editor. I personally use [**vscode**](https://code.visualstudio.com/).
+
+* A simple example of a **module** looks like the following,
+
+		# Module file mymodule.py
+		
+		def my_func():
+		     print(“I am in mymodule.py”)
+		     
+		---
+		
+		# Calling file myprogram.py
+		
+		from mymodule import my_func
+		
+		print my_func()
+		
+		---
+		Output:
+		
+		--> python3 ./myprogram.py
+		--> I am in mymodule
+
+	> **mymmodule.py** and **myprogram.py** can be reviewed in the directory **section-9**.
+		
+* As modules become more complex and/or numerous, they can be aggregated into [**packages**](https://docs.python.org/3/tutorial/modules.html#packages)
+
+* An example of how to create a [**package**](https://docs.python.org/3/tutorial/modules.html#packages) looks like,
+
+	1. Create a directory **MyMainPackage**
+	2. Create a subdirectory under **MyMainPackage** called **SubPackage**
+	3. Create an empty file, **\_\_init\_\_.py** in both **MyMainPackage** and **SubPackage** directories.
+
+			--> touch __init__.py
+
+		> The existence of an **\_\_init\_\_.py** tells the Python interpreter to treat all files in the directory as a **package**.
+		
+	4. Create a file **some_main_script.py** in **MyMainPackage**.
+	5. Create the functions inside the scripts.
+
+		> Contents of the scripts can be copied from the directories **MyMainPackage** and **SubPackage**
+		
+	6. Create a new file in **section-9** called **packagetest.py** that calls the package functions,
+
+			from MyMainPackage              import some_main_script
+			from MyMainPackage.SubPackage   import mysubscript
+			
+			some_main_script.report_main()
+			
+			mysubscript.sub_report()
+	
+	7. Execute the **packagetest.py** script as follows,
+
+			--> python3 ./packagetest.py
+			
+			---
+			Output:
+			
+			I am a function in some_main_script.py
+			I am a function in mysubscript.py
+	
+
+---
+####Takeaways
+
+* **Packages** are simply collections of **modules** that are often grouped in **directories**.
+* Python will interpret any **directory** containing the file **\_\_init\_\_.py** as a **package**.
+
+---
+
+#### Lesson 79. \_\_name\_\_ and “\_\_main\_\_”
+
+* Most Python scripts will have the following line at the end of the script with a block of code to be executed,
+
+		if __name__ == “__main__”:
+			# code block
+
+> Review the **README** in **section-9** for a full description of what this does.
+
+* [**\_\_name\_\_**](https://docs.python.org/3/reference/datamodel.html#the-standard-type-hierarchy) is a **built-in variable**
+* **python** automatically assigns the **\_\_name\_\_** variable to **\_\_main\_\_** any time a python script is executed, e.g.
+
+		--> python3 somefile.py
+		
+* The **if \_\_name\_\_ == “\_\_main\_\_”:** line is used to organize the code in the script to basically emulate the **main()** structure in other languages.
+
+* An example of how this works is as follows,
+
+	1. Create two files, **one.py** and **two.py** in **section-9**.
+	2. Copy the file contents of **one.py** and **two.py** from [**Sund0g’s repo**](https://github.com/sund0g/python-bootcamp/tree/master/section-9)
+	3. Execute the following commands from **section-9** to see how all this works,
+
+			-->python3 ./one.py
+			
+			---
+			Output:
+			
+			Top level in one.py
+			one.py is being executed directly
+			
+			---
+			
+			--> python ./two.py
+			
+			--
+			Output:
+			
+			Top level in one.py
+			one.py has been imported
+			Top level in two.py
+			func() in one.py
+			two.py is being executed directly
+
+
+---
+####Takeaways
+
+* **python** doesn’t have the concept of a **main()** function that other languages have. All code at **indentation 0** will be executed.
+* **if \_\_name\_\_ == “\_\_main\_\_”:** is a way to **emulate** **main()**.
+
+---
+
