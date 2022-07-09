@@ -15,6 +15,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 8: Object Oriented Programming](#8)
 * [Section 9: Modules and Packages](#9)
 * [Section 10: Errors and Exceptions Handling](#10)
+* [Section 11: Milestone Project - 2](#11)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -1714,3 +1715,10 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * Review the [**assertEqual**](https://www.geeksforgeeks.org/python-unittest-assertequal-function/) method to better understand the **comparison** part of the unit test framework. 
 
 ---
+
+<a name="11"></a>
+## Section 11: Milestone Project - 2
+
+#### Lesson 86. Introduction to Milestone Project 2 Section Warmup
+
+* 
