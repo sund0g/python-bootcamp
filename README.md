@@ -14,6 +14,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 7: Milestone Project - 1](#7)
 * [Section 8: Object Oriented Programming](#8)
 * [Section 9: Modules and Packages](#9)
+* [Section 10: Errors and Exceptions Handling](#10)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -296,7 +297,7 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		returns Scott is 42 years old
 			
 ---
-####Takeaways
+#### Takeaways
 
 * Additional resource for string formatting: https://pyformat.info/
 * [**casefold()**](https://www.geeksforgeeks.org/case-insensitive-string-comparison-in-python/) is preferred over **lower()** and **upper()** when dealing with non-english languages because upper and lower case characters may not be the same, e.g.
@@ -405,7 +406,7 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 		my_tuple[0] = 'NEW'	returns TypeError: 'tuple' object does not support item assignment
 		
 ---
-#### Takeaway
+#### Takeaways
 
 * **Tuples** are very useful when passing objects that are not to be changed.
 
@@ -638,7 +639,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		
 ---
 
-#### Takeaway
+#### Takeaways
 * **Unpacking** is common in Python
 
 ---
@@ -797,7 +798,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > ‘+’ **adds** numbers, and **concatenates** strings.
 
  ---
-####Takeaways
+#### Takeaways
  
  * Python is dynamically typed, (unlike C or C++ which are statically typed). This means function parameters do not have to be type-checked when passed into the function. However, this can cause unexpected side effects, so adding type checking is a generally accepted principle. An example of how to do this will be shown later.
 
@@ -830,7 +831,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * **Step 4**: Create a script that calls all the functions.
 
 ---
-####Takeaways
+#### Takeaways
 
 * The **input** function only returns strings, so may have to cast the returned variable if something other than a string is needed.
 
@@ -856,7 +857,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * **\*\*kwargs** builds a [dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries) out of the variables passed into the function. 
 
 ---
-**Takeaways**
+#### Takeaways
 
 * **\*args** returns a [**tuple**](https://www.geeksforgeeks.org/python-tuples/)
 
@@ -876,7 +877,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 
 ---
-####Takeaways
+#### Takeaways
 
 * Get in the habit of writing code. Even the simplest problems take forever if you are out of practice.
 
@@ -950,9 +951,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	> Lambdas are very useful in single-use scenarios rather than creating a function as shown in the previous examples square() and check_even().
 	
 ---
-####Takeaways
+#### Takeaways
 
-* Lambda functions can become quite complex. Keep in mind that not all functions are appropriate to define as lambdas because they will be hard to read.
+* **Lambda functions** can become quite complex. Keep in mind that not all functions are appropriate to define as lambdas because they will be hard to read.
 
 ---
 
@@ -1026,7 +1027,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		#	x changed to 200
 		
 ---
-####Takeaways
+#### Takeaways
 
 * Never overwrite **built-in functions/variables**.
 * The use of **global** to change global variables inside of functions is not recommended. The general convention is to pass in global variables, operate on them, and **return** them.
@@ -1042,7 +1043,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > My solutions to these problems are in the Jupyter notebook **section-6.ipynb**
 
 ---
-####Takeaways
+#### Takeaways
 
 * Use the [**set**](https://www.geeksforgeeks.org/python-set-method/) method to quickly return a list of unique elements in an iterable, (Homework 4).
 
@@ -1075,7 +1076,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > Note: When executing an **input** command in a **Jupyter notebook** select **shift** + **return**
 
 ---
-####Takeaways
+#### Takeaways
 
 * Remember, the **input()** function only returns strings. If int or float are needed, cast the result of the input.
 
@@ -1124,7 +1125,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * The functions and design comments are all in the Jupyter notebook, **section-7.ipynb**
 
 ---
-####Takeaways
+#### Takeaways
 
 * To populate an empty list, do the following,
 
@@ -1186,7 +1187,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * Attributes can be of any type. 
 
 ---
-####Takeaways
+#### Takeaways
 
 * By convention classes are **CamelCase**
 
@@ -1257,7 +1258,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		        return 2 * Circle.pi * self.radius	
 
 ---
-####Takeaways
+#### Takeaways
 
 * **Attributes** are informational only. They are not called with **()**.
 * By convention, **class object attributes** are referenced by their **class name** because they will always be the same for any instance, and it make it easier for others to read.
@@ -1362,7 +1363,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 
 ---
-####Takeaways
+#### Takeaways
 
 * **Functions** can take in different arguments. **Methods** belong to the **objects** they act on.
 * **Sub classes** do not need a **constructor** class if they use an **Abstract class**. They will use the constructor from the **ABS** class.
@@ -1379,7 +1380,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * The homework problems are in the coursework [**here**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/05-Object%20Oriented%20Programming/02-Object%20Oriented%20Programming%20Homework.ipynb)
 
 ---
-####Takeaways
+#### Takeaways
 
 * Most class methods will take in **iterables**, so get comfortable,
 	* unpacking tuples
@@ -1405,7 +1406,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > I did not install the [**colorama**](https://pypi.org/project/colorama/) package as shown in the lesson.
 
 ---
-####Takeaways
+#### Takeaways
 
 * Type **quit()** to exit the Python command line from a terminal window. (I tend to forget this).
 
@@ -1483,7 +1484,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	
 
 ---
-####Takeaways
+#### Takeaways
 
 * **Packages** are simply collections of **modules** that are often grouped in **directories**.
 * Python will interpret any **directory** containing the file **\_\_init\_\_.py** as a **package**.
@@ -1535,10 +1536,181 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 
 ---
-####Takeaways
+#### Takeaways
 
 * **python** doesn’t have the concept of a **main()** function that other languages have. All code at **indentation 0** will be executed.
 * **if \_\_name\_\_ == “\_\_main\_\_”:** is a way to **emulate** **main()**.
 
 ---
 
+<a name="10"></a>
+## Section 10: Errors and Exceptions Handling
+
+#### Lesson 80. Errors and Exception Handling
+
+> Examples of **exception handling** are in the accompanying Jupyter notebook **section-7.ipynb**
+
+* [**Error handling**](https://docs.python.org/3/tutorial/errors.html) is used to attempt to plan for possible errors.
+
+* There are **three keywords** for this:
+	
+	Keyword|Action
+	---|---
+	[**try**](https://docs.python.org/3/reference/compound_stmts.html#except)|block of code to be attempted (may lead to an error).
+	[**except**](https://docs.python.org/3/reference/compound_stmts.html#except)|block of code to execute if there is an error in the **try** block.
+	**else**|a block of code to execute if there is no error.
+	[**finally**](https://docs.python.org/3/reference/compound_stmts.html#finally)|a final block of code to execute regardless of an error.
+	
+* A simple example of a **try/except/else** looks like,
+
+		try:
+			result = 10 + “10”
+		except:
+			print(“you are trying to add an integer type and a string type”)
+		else:
+			print(result)
+			
+		---
+		Output:
+		
+		--> you are trying to add an integer type and a string type
+		
+		---
+		Changing “10” to 10 returns
+		
+		--> 20
+
+* A complete list of **built-in exceptions** can be reviewed int the [**Python docs**](https://docs.python.org/3/library/exceptions.html)
+
+* Handlers can have as many **exceptions** as needed to handle multiple errors, e.g.
+
+		try:
+			# block of code
+			
+		except TypeError:
+			print(“There is a TypeError”)
+		
+		except OSError:
+			print(“There is an OSError”)
+		
+		...
+		 
+	
+---
+#### Takeaways
+
+* **Best practice** is to specifically define the exception the **except** will handle. Generic handlers make it more challenging to debug.
+
+---
+
+#### Lessons 81 and 82. Errors and Exceptions Homework
+
+* Course [solutions](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/07-Errors%20and%20Exception%20Handling/03-Errors%20and%20Exceptions%20Homework%20-%20Solution.ipynb) for review as needed.
+
+#### Lessons 83 and 84. Pylint Overview
+
+* **Unit Tests** are a critical function of creating quality code. Unit tests provide a way to automatically re-run and validate code changes.
+
+* There are several testing tools available to accomplish **unit Testing**. We are focusing on,
+
+	* [**pylint**](https://pylint.pycqa.org/en/latest/): a library that provides **static code analysis**
+	* [**unittest**](https://docs.python.org/3/library/unittest.html): a built-in library that provides a **unit test framework** for unit testing.
+
+> This lecture includes creating files from an editor. I personally use [**vscode**](https://code.visualstudio.com/).
+
+* To install **pylint**, is not already installed, execute the following from a commandline,
+
+		pip3 install pylint
+		
+* Create a file in the **section-10** directory that looks like,
+
+		# This file intentionally creates an error condition.
+		
+		a = 1
+		b = 2
+		
+		print(a)
+		
+		print(B)
+		
+* Execute the following command from the commandline in the **section-10** directory,
+
+		pylint simple1.py
+
+* This returns a report of the quality of the code in **simple1.py**
+
+		************* Module simple1
+		simple1.py:9:0: C0304: Final newline missing (missing-final-newline)
+		simple1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+		simple1.py:4:0: C0103: Constant name “a” doesn’t conform to UPPER_CASE naming style (invalid-name)
+		simple1.py:5:0: C0103: Constant name “b” doesn’t conform to UPPER_CASE naming style (invalid-name)
+		simple1.py:9:6: E0602: Undefined variable ‘B’ (undefined-variable)
+				
+		-----------------------------------
+		Your code has been rated at 0.00/10
+
+* To get a more verbose report, execute,
+
+		pylint simple1.py -r y
+		
+ > The results of this can be reviewed in the accompanying file **simple1\_code\_analysis\_report.txt**
+ 
+* Now, clean the script up based on the results in the report.
+
+	1. Create a file **simple1\_clean.py** in the **section-10** directory
+	2. Edit the file in an editor, and clean it up based on what the report calls out.
+	
+		> The accompanying file **simple1\_clean.py** can be copied from [**Sund0g’s repo**](https://github.com/sund0g/python-bootcamp/tree/master/section-10)
+	3. execute,
+
+			pylint simple1_clean.py -r y
+	4. Review the results, they should now be much closer to 10.0
+
+	
+---
+#### Takeaways
+
+* **pylint** is very useful when submitting code to a public repo. It gives the code review committee a clear view of the quality of the code.
+
+---
+
+#### Lesson 85. Running tests with the Unittest Library
+
+* A [**Unit Test Framework**](https://www.oreilly.com/library/view/unit-test-frameworks/0596006896/ch01.html) provides a way to,
+
+	* create a **test program** that accepts **test input**
+	* execute **tests** from the **test program** using the **test input**
+	* analyze the results of the **test run**
+	* compare the results and report on deviations from expected results
+
+
+> This lecture includes creating files from an editor. I personally use [**vscode**](https://code.visualstudio.com/).
+
+* To demonstrate a simple unit test framework, we will do the following,
+
+	1. Create the file **cap.py** This file will capitalize text.
+	2. Create the file **test_cap.py** This is the test file.
+	
+	 > The accompanying files **cap.py** and **test_cap.py** can be copied from [**Sund0g’s repo**](https://github.com/sund0g/python-bootcamp/tree/master/section-10)
+	3. Execute the following from the command line in the **section-10** directory,
+
+			python3 ./test_cap.py
+			
+	4. The unittest report should look something like the following,
+
+			----------------------------------------------------------------------
+			Ran 2 tests in 0.003s
+			
+			FAILED (errors=2)
+			➜  section-10 git:(section-10) ✗ python3 ./test_cap.py
+			..
+			----------------------------------------------------------------------
+			Ran 2 tests in 0.000s
+
+---
+#### Takeaways
+
+* Writing **unit tests** should start out **simple** and progress to **complex**
+* Review the [**assertEqual**](https://www.geeksforgeeks.org/python-unittest-assertequal-function/) method to better understand the **comparison** part of the unit test framework. 
+
+---
