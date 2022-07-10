@@ -1459,7 +1459,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 		> The existence of an **\_\_init\_\_.py** tells the Python interpreter to treat all files in the directory as a **package**.
 		
-	4. Create a file **some_main_script.py** in **MyMainPackage**.
+	4. Create a file **some\_main\_script.py** in **MyMainPackage**.
 	5. Create the functions inside the scripts.
 
 		> Contents of the scripts can be copied from the directories **MyMainPackage** and **SubPackage**
@@ -1720,5 +1720,109 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 ## Section 11: Milestone Project - 2
 
 #### Lesson 86. Introduction to Milestone Project 2 Section Warmup
+
+* As a warm-up exercise, recreate the card game, [**war**](https://en.wikipedia.org/wiki/War_(card_game))
+
+* To construct the game the following **classes** will be created,
+
+	* **Card**
+	* **Deck**
+	* **Player**
+	* **GameLogic**
+
+* The players will be virtual players.
+
+---
+#### Takeaways
+
+* **Classes** can be connected to other classes, not singularly via **inheritance**.
+
+---
+
+#### Lesson 87. Card Class
+
+* The **Card** class has three properties,
+	* **Suit**: Spade, Heart, Club, Diamond
+	* **Rank**: 2-Ace
+	* **Value**: Integer value that corresponds to the Rank.
+
+> The **Card** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+#### Lesson 88. Deck Class
+
+* The **Deck** class does the following,
+	* **Create** a new deck
+		* Creates all 52 cards
+		* Holds the list of the cards
+
+			> This will be a **list of objects**
+		
+	* **Shuffle** a deck
+		* via the **random** **shuffle()** method
+	* **Deal** cards from the deck
+		* **pop** method to “remove” the cards from the deck as they are dealt
+
+> The **Deck** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+---
+#### Takeaways
+
+* **-1** will get the **last item** in an **iterable**.
+* **random.shuffle()** is an **in-place** method, meaning it operates on the original iterable and doesn’t return a new iterable.
+* [**pop()**](https://docs.python.org/3/tutorial/datastructures.html#data-structures) called without a parameter, returns the **last item (-1)** in the iterable.
+
+---
+
+#### Lesson 89. Player Class
+
+* The **Player** class does the following,
+	* **Holds** the player’s cards, (in a list)
+	* **Removes** cards from the player’s “hand” (list of card objects)
+
+* The Class should be able to add and take away multiple cards from their hand.
+
+* The game should understand the concept of **top** and **bottom** of a deck, e.g.
+
+	* Cards will be removed from the **top** of the deck
+	* Cards will be added to the **bottom** of the deck.
+
+* Python **lists** go from **left to right**. **Top** = **left** and **bottom** = **right**
+
+	* **pop(0)** will be used to draw from the **top** or **left** of the deck.
+	* **append(card)** will be used to add to the **bottom** or **right** of the deck.
+	* [**extend()**](https://docs.python.org/3/tutorial/datastructures.html#data-structures) will add **multiple** cards to the **bottom** or **right** of the deck, during a **war**.
+		> **append()** cannot be used for multiple cards, because it will append the cards as a **single list** instead of **merging** the two lists.
+
+	> Explore how to do this in a **single** method.
+	
+
+
+---
+#### Takeaways
+
+* **append()** and **extend()** work very differently, e.g.
+
+	* append() **adds**
+	* extend() **merges**
+
+			# append() example
+			
+			list1 = [1, 2, 3]
+			list2 = [4, 5, 6]
+			
+			list1.append(list2) # results in
+			
+			“[1, 2, 3, [4, 5, 6]]” # nested list
+			
+			# whereas extend() example does,
+			
+			list1.extend(list2) # results in 
+			
+			“[1, 2, 3, 4, 5, 6]” # merged list
+			
+
+---
+
+#### Lesson 90. Game Logic - Part One
 
 * 
