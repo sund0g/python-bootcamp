@@ -727,7 +727,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 41. Methods and the Python Documentation
 
-> All examples are in the accompanying Jupyter notebook section-6.ipynb
+> All examples are in the accompanying Jupyter notebook **section-6.ipynb**
 
 * **Methods** are functions that are built into objects, e.g.
 
@@ -809,11 +809,11 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 45. Logic with Python Functions
 
-* Checking for even numbers examples are all in the Jupyter notebook, section-6.ipynb, lesson 45.
+* Checking for even numbers examples are all in the Jupyter notebook, **section-6.ipynb**, lesson 45.
 
 #### Lesson 46. Tuple Unpacking with Python Functions
 
-* Unpacking employee of the month data example is in the Jupyter notebook, section-6.ipynb, lesson 46.
+* Unpacking employee of the month data example is in the Jupyter notebook, **section-6.ipynb**, lesson 46.
 
 #### Lesson 47. Interactions between Python functions
 
@@ -892,7 +892,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 55. Lambda Expressions, Map, and Filter Functions
 
-> All examples are in the accompanying Jupyter notebook section-6.ipynb
+> All examples are in the accompanying Jupyter notebook **section-6.ipynb**
 
 * [**Lambda Expressions**](https://docs.python.org/3/reference/expressions.html#lambda) are a way to create what are known as [**anonymous functions**](https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/)
 
@@ -1786,6 +1786,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* Cards will be removed from the **top** of the deck
 	* Cards will be added to the **bottom** of the deck.
 
+> The **Player** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
 * Python **lists** go from **left to right**. **Top** = **left** and **bottom** = **right**
 
 	* **pop(0)** will be used to draw from the **top** or **left** of the deck.
@@ -1823,6 +1825,27 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
-#### Lesson 90. Game Logic - Part One
+#### Lessons 90, 91, and 92. Game Logic - Parts One, Two, and Three
 
-* 
+* In a real-world scenario, the logic and the class structures are developed simultaneously.
+
+> The **game logic** can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+* There are three hand scenarios the game logic has to check for,
+	* player1’s card < player2’s card
+	* player1’s card > player2’s card
+	* player1’s card == player2’s card
+
+---
+#### Takeaways
+
+* It’s often useful to **visualize** the **game logic** to make the coding easier.
+
+---
+
+#### Lesson 93 - Milestone Project 2
+
+* All example script files can be found in the directory **section-11**.
+
+> Part of the lessons will be to create these files from an editor. I personally use [**vscode**](https://code.visualstudio.com/).
+
