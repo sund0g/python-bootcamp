@@ -15,6 +15,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 8: Object Oriented Programming](#8)
 * [Section 9: Modules and Packages](#9)
 * [Section 10: Errors and Exceptions Handling](#10)
+* [Section 11: Milestone Project - 2](#11)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -706,7 +707,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* For multiples of three, print “Fizz” instead of the number.
 	* For multiples of five, print “Buzz” instead of the number.
 	* For numbers which are both multiples of three and five, print “Fizzbuzz” instead of the number.
-* 
+ 
 
 		for num in range(0,101):
 			if num%3 == 0 and num%5 == 0:
@@ -718,7 +719,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 			else:
 				print(num)
 
-**NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
+* **NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
+
 ---
 
 <a name="6"></a>
@@ -726,7 +728,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 41. Methods and the Python Documentation
 
-> All examples are in the accompanying Jupyter notebook section-6.ipynb
+> All examples are in the accompanying Jupyter notebook **section-6.ipynb**
 
 * **Methods** are functions that are built into objects, e.g.
 
@@ -808,11 +810,11 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 45. Logic with Python Functions
 
-* Checking for even numbers examples are all in the Jupyter notebook, section-6.ipynb, lesson 45.
+* Checking for even numbers examples are all in the Jupyter notebook, **section-6.ipynb**, lesson 45.
 
 #### Lesson 46. Tuple Unpacking with Python Functions
 
-* Unpacking employee of the month data example is in the Jupyter notebook, section-6.ipynb, lesson 46.
+* Unpacking employee of the month data example is in the Jupyter notebook, **section-6.ipynb**, lesson 46.
 
 #### Lesson 47. Interactions between Python functions
 
@@ -891,7 +893,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 55. Lambda Expressions, Map, and Filter Functions
 
-> All examples are in the accompanying Jupyter notebook section-6.ipynb
+> All examples are in the accompanying Jupyter notebook **section-6.ipynb**
 
 * [**Lambda Expressions**](https://docs.python.org/3/reference/expressions.html#lambda) are a way to create what are known as [**anonymous functions**](https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/)
 
@@ -1458,7 +1460,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 		> The existence of an **\_\_init\_\_.py** tells the Python interpreter to treat all files in the directory as a **package**.
 		
-	4. Create a file **some_main_script.py** in **MyMainPackage**.
+	4. Create a file **some\_main\_script.py** in **MyMainPackage**.
 	5. Create the functions inside the scripts.
 
 		> Contents of the scripts can be copied from the directories **MyMainPackage** and **SubPackage**
@@ -1714,3 +1716,171 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * Review the [**assertEqual**](https://www.geeksforgeeks.org/python-unittest-assertequal-function/) method to better understand the **comparison** part of the unit test framework. 
 
 ---
+
+<a name="11"></a>
+## Section 11: Milestone Project - 2
+
+#### Lesson 86. Introduction to Milestone Project 2 Section Warmup
+
+* As a warm-up exercise, recreate the card game, [**war**](https://en.wikipedia.org/wiki/War_(card_game))
+
+* To construct the game the following **classes** will be created,
+
+	* **Card**
+	* **Deck**
+	* **Player**
+	* **GameLogic**
+
+* The players will be virtual players.
+
+---
+#### Takeaways
+
+* **Classes** can be connected to other classes, not singularly via **inheritance**.
+
+---
+
+#### Lesson 87. Card Class
+
+* The **Card** class has three properties,
+	* **Suit**: Spade, Heart, Club, Diamond
+	* **Rank**: 2-Ace
+	* **Value**: Integer value that corresponds to the Rank.
+
+> The **Card** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+#### Lesson 88. Deck Class
+
+* The **Deck** class does the following,
+	* **Create** a new deck
+		* Creates all 52 cards
+		* Holds the list of the cards
+
+			> This will be a **list of objects**
+		
+	* **Shuffle** a deck
+		* via the **random** **shuffle()** method
+	* **Deal** cards from the deck
+		* **pop** method to “remove” the cards from the deck as they are dealt
+
+> The **Deck** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+---
+#### Takeaways
+
+* **-1** will get the **last item** in an **iterable**.
+* **random.shuffle()** is an **in-place** method, meaning it operates on the original iterable and doesn’t return a new iterable.
+* [**pop()**](https://docs.python.org/3/tutorial/datastructures.html#data-structures) called without a parameter, returns the **last item (-1)** in the iterable.
+
+---
+
+#### Lesson 89. Player Class
+
+* The **Player** class does the following,
+	* **Holds** the player’s cards, (in a list)
+	* **Removes** cards from the player’s “hand” (list of card objects)
+
+* The Class should be able to add and take away multiple cards from their hand.
+
+* The game should understand the concept of **top** and **bottom** of a deck, e.g.
+
+	* Cards will be removed from the **top** of the deck
+	* Cards will be added to the **bottom** of the deck.
+
+> The **Player** class can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+* Python **lists** go from **left to right**. **Top** = **left** and **bottom** = **right**
+
+	* **pop(0)** will be used to draw from the **top** or **left** of the deck.
+	* **append(card)** will be used to add to the **bottom** or **right** of the deck.
+	* [**extend()**](https://docs.python.org/3/tutorial/datastructures.html#data-structures) will add **multiple** cards to the **bottom** or **right** of the deck, during a **war**.
+		> **append()** cannot be used for multiple cards, because it will append the cards as a **single list** instead of **merging** the two lists.
+
+	> Explore how to do this in a **single** method.
+
+---
+#### Takeaways
+
+* **append()** and **extend()** work very differently, e.g.
+
+	* append() **adds**
+	* extend() **merges**
+
+			# append() example
+			
+			list1 = [1, 2, 3]
+			list2 = [4, 5, 6]
+			
+			list1.append(list2) # results in
+			
+			“[1, 2, 3, [4, 5, 6]]” # nested list
+			
+			# whereas extend() example does,
+			
+			list1.extend(list2) # results in 
+			
+			“[1, 2, 3, 4, 5, 6]” # merged list
+			
+
+---
+
+#### Lessons 90, 91, and 92. Game Logic - Parts One, Two, and Three
+
+* In a real-world scenario, the logic and the class structures are developed simultaneously.
+
+> The **game logic** can be reviewed in the accompanying Jupyter notebook, **section-11.ipynb**
+
+* There are three hand scenarios the game logic has to check for,
+	* player1’s card < player2’s card
+	* player1’s card > player2’s card
+	* player1’s card == player2’s card
+
+---
+#### Takeaways
+
+* It’s often useful to **visualize** the **game logic** to make the coding easier.
+
+---
+
+#### Lesson 93 - Milestone Project 2
+
+* This OOP project creates a simulated [**Blackjack**](https://en.wikipedia.org/wiki/Blackjack) game.
+
+* This version of the game,
+	*  will only have the **computer** as the **dealer** and **one human player**. 
+	*  It will ignore actions like **insurance**, **split**, and **double down**. 
+	*  The only actions will be **hit** and **stay**.
+	*  **Face cards** have a value of **10**.
+	*  **Aces** have a value of either **1** or **11** at the choice of the player.
+
+* Combining the logic with the gameplay yields something like,
+
+	* Dealer
+	* Player aka card hands
+	* Deck
+	* Bets
+	* Chips
+
+> The **game** can be reviewed in the accompanying Jupyter notebook, **milestone-project-2.ipynb**
+
+* The instructor’s solutions can be reviewed [here](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/08-Milestone%20Project%20-%202/03-Milestone%20Project%202%20-%20Complete%20Walkthrough%20Solution.ipynb) on gitHub.
+
+---
+#### Takeaways
+
+* The instructor uses [**truthy**](https://www.geeksforgeeks.org/truthy-vs-falsy-values-in-python/) in the **adjust\_for\_aces()** method. this may require a little less memory to process, but I generally don’t use this convention as it can cause confusion for others reading the code.
+
+* You can use the **print(0)** to print all items in an iterable, e.g.
+
+		items = [1, 2, 3]
+
+		# Using a traditional for loop
+		
+		for item in items:
+		    print(f”{item}”)
+		    
+		# Using the iterator ‘*’ This is very common in Python
+		print(“Items: “, *items, sep=“\n”)
+		
+---
+
