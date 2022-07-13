@@ -707,7 +707,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* For multiples of three, print “Fizz” instead of the number.
 	* For multiples of five, print “Buzz” instead of the number.
 	* For numbers which are both multiples of three and five, print “Fizzbuzz” instead of the number.
-* 
+ 
 
 		for num in range(0,101):
 			if num%3 == 0 and num%5 == 0:
@@ -719,7 +719,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 			else:
 				print(num)
 
-**NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
+* **NOTE: make sure to check for multiples of 3 and 5 FIRST. This keeps the logic correct.**
+
 ---
 
 <a name="6"></a>
@@ -1796,8 +1797,6 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		> **append()** cannot be used for multiple cards, because it will append the cards as a **single list** instead of **merging** the two lists.
 
 	> Explore how to do this in a **single** method.
-	
-
 
 ---
 #### Takeaways
@@ -1845,7 +1844,43 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 93 - Milestone Project 2
 
-* All example script files can be found in the directory **section-11**.
+* This OOP project creates a simulated [**Blackjack**](https://en.wikipedia.org/wiki/Blackjack) game.
 
-> Part of the lessons will be to create these files from an editor. I personally use [**vscode**](https://code.visualstudio.com/).
+* This version of the game,
+	*  will only have the **computer** as the **dealer** and **one human player**. 
+	*  It will ignore actions like **insurance**, **split**, and **double down**. 
+	*  The only actions will be **hit** and **stay**.
+	*  **Face cards** have a value of **10**.
+	*  **Aces** have a value of either **1** or **11** at the choice of the player.
+
+* Combining the logic with the gameplay yields something like,
+
+	* Dealer
+	* Player aka card hands
+	* Deck
+	* Bets
+	* Chips
+
+> The **game** can be reviewed in the accompanying Jupyter notebook, **milestone-project-2.ipynb**
+
+* The instructor’s solutions can be reviewed [here](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/08-Milestone%20Project%20-%202/03-Milestone%20Project%202%20-%20Complete%20Walkthrough%20Solution.ipynb) on gitHub.
+
+---
+#### Takeaways
+
+* The instructor uses [**truthy**](https://www.geeksforgeeks.org/truthy-vs-falsy-values-in-python/) in the **adjust\_for\_aces()** method. this may require a little less memory to process, but I generally don’t use this convention as it can cause confusion for others reading the code.
+
+* You can use the **print(0)** to print all items in an iterable, e.g.
+
+		items = [1, 2, 3]
+
+		# Using a traditional for loop
+		
+		for item in items:
+		    print(f”{item}”)
+		    
+		# Using the iterator ‘*’ This is very common in Python
+		print(“Items: “, *items, sep=“\n”)
+		
+---
 
