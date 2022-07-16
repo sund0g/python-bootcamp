@@ -18,6 +18,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 11: Milestone Project - 2](#11)
 * [Section 12: Python Decorators](#12)
 * [Section 13: Python Generators](#13)
+* [Section 14: Advanced Python Modules](#14)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2047,3 +2048,31 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+<a name="14"></a>
+## Section 14: Advanced Python Modules
+
+#### Lesson 103. Intro to Advanced Python Modules
+
+* There are many complex Python modules and packages that are useful in everyday development and engineering.
+
+* **Modules** covered in this section,
+
+	* [**Collections**](https://docs.python.org/3/library/collections.html)
+	* **Os** and **DateTime**
+	* **Math** and **Random**
+	* **Python Debugger**
+	* **Timeit**
+	* **Regular Expressions**
+	* **Unzipping** and **Zipping Modules**
+
+---
+
+#### Lesson 104. Python Collections Module
+
+> All examples are in the accompanying Jupyter notebook **section-14.ipynb**
+
+*  The [**Collections**](https://docs.python.org/3/library/collections.html) **built-in** module implements specialized **container** types that are alternatives to Python’s general prupose container types, e.g. **list**, **dictionary**, **tuple**, etc.
+
+* Very useful [**collections**](https://www.geeksforgeeks.org/python-collections-module/) methods are,
+
+	* [**Counter**](https://www.geeksforgeeks.org/python-collections-module/#counters)  
