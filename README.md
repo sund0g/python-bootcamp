@@ -16,8 +16,11 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 9: Modules and Packages](#9)
 * [Section 10: Errors and Exceptions Handling](#10)
 * [Section 11: Milestone Project - 2](#11)
+* [Section 12: Python Decorators](#12)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
+
+* Also pay attention to the **Takeaways**, as they contain useful tips, memory aids, etc.
 
 
 <a name="1"></a>
@@ -1842,7 +1845,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
-#### Lesson 93 - Milestone Project 2
+#### Lesson 93. - Milestone Project 2
 
 * This OOP project creates a simulated [**Blackjack**](https://en.wikipedia.org/wiki/Blackjack) game.
 
@@ -1868,7 +1871,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 ---
 #### Takeaways
 
-* The instructor uses [**truthy**](https://www.geeksforgeeks.org/truthy-vs-falsy-values-in-python/) in the **adjust\_for\_aces()** method. this may require a little less memory to process, but I generally don’t use this convention as it can cause confusion for others reading the code.
+* The instructor uses [**truthy**](https://www.geeksforgeeks.org/truthy-vs-falsy-values-in-python/) in the **adjust\_for\_aces()** method. This may require a little less memory to process, but I generally don’t use this convention as it can cause confusion for others reading the code.
 
 * You can use the **print(0)** to print all items in an iterable, e.g.
 
@@ -1883,4 +1886,87 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		print(“Items: “, *items, sep=“\n”)
 		
 ---
+
+<a name="12"></a>
+## Section 12: Python Decorators
+
+#### Lesson 98. Decorators with Python Overview
+
+> All examples are in the accompanying Jupyter notebook **section-12.ipynb**
+
+* **Decorator syntax**: `@decorator` e.g.
+
+		@new_decorator
+		def func_needs_decorator():
+			print(“I want to be decorated!!”)
+
+* [**Decorators**](https://www.geeksforgeeks.org/decorators-in-python/) provide a way to extend an existing function without permanently modifying it, i.e. the modifications can easily be reverted.
+
+* **Decorators** are widely used in web development with tools like [**Django**](https://www.djangoproject.com/) and [**Flask**](https://flask.palletsprojects.com/).
+
+* **Functions** are **objects** that can be,
+
+	* **assigned to variables** and subsequently be executed from those variables
+	* be **returned** from other functions
+	* be **passed** as arguments to other functions
+
+---
+#### Takeaways
+
+* Think of a **Decorator** as an **on/off switch** that we can use to execute extra code when we want to or not.
+
+* The **assertion** that **Decorators** are **slow** is **misleading**. Decorators by themselves do not create performance impacts. **The decorating code will obviously take longer than the wrapped function**.
+
+* There are many debates about **decorating** versus **sub-classing**. every scenario requires **design thinking** to determine which is more appropriate.
+
+* **Calling** a variable assigned to a function is different than **printing** it, e.g.
+
+		# refer to the hello()/greet()/wlecome() example in the Jupyter notebook
+		# for the function details and logic.
+		
+		--> my_new_func()
+		
+		# returns
+		--> '\tThis is the greet() inside hello()!'
+		
+		---
+		
+		--> print(my_new_func())
+		
+		# returns NOTE the formatting is executed
+		--> 	This is the greet() inside hello()
+		
+* functions **called from other functions** or **passed in as arguments** should **return something**. Else odd behavior can happen, e.g.
+
+		# function passed in as an argument
+		
+		def hello():
+			print(“Hi!”)
+			
+		# Calling function
+		
+		def other(a_func):
+			print(a_func)
+			
+		---
+		
+		--> other(hello)
+		
+		# returns
+		
+		Hi!
+		None     # This tells us hello doesn’t return anything.
+		
+		# The fix
+		
+		def hello():
+			return “Hi!”		
+
+---
+
+#### Lesson 99. Decorators Homework (Optional)
+
+* Review the [**instructor’s homework**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/10-Python%20Decorators/02-Decorators%20Homework.ipynb) on [**Django**](https://www.djangoproject.com/) and [**Flask**](https://flask.palletsprojects.com/) to understand more about how to develop **full stack** web development.
+
+* Websites such as **pinterest** and **reddis** are developed in Python.
 
