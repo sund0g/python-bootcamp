@@ -1678,6 +1678,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * **pylint** is very useful when submitting code to a public repo. It gives the code review committee a clear view of the quality of the code.
 
+* Study this as this is a favorite **interview question**.
+
 ---
 
 #### Lesson 85. Running tests with the Unittest Library
@@ -1976,6 +1978,72 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 <a name="13"></a>
 ## Section 13: Python Generators
 
+> All examples are in the accompanying Jupyter notebook **section-13.ipynb**
+
 #### Lesson 100. Generators with Python
 
-* 
+* [**Generator functions**](https://www.geeksforgeeks.org/generators-in-python/) basically provides a method to return a value and subsequently resume where the function returned the value.
+
+* **Generators** provide a way to generate a **sequence** of **values** over **time**.
+
+* The primary difference is the syntax `yield` instead of `return`.
+
+* When generators are **compiled**, they become an **object** that supports an **iteration** protocol and,
+
+	* They do not return a value and exit.
+	* They automatically suspend and resume their execution state around the last point of value generation.
+	* The **advantage** is instead of having to compute the entire value series up front, they compute a value and wait until the next value is called for.
+
+* The [**range()**](https://docs.python.org/3/library/stdtypes.html#typesseq-range) function works this way. It simply keeps track of the **last** number, and the step size to provide a **flow** of numbers.
+
+	> **loop** objects **for** and **while** are **generators**
+
+* If the **entire** sequence of values is **required up front**, the generator will have to be **transformed** into a **list**, e.g.,
+
+		my_full_list = list(range(0,10))
+
+* **Generator** functions can be used with,
+
+	* [**next()**](https://docs.python.org/3/library/functions.html#next) returns the next value in the series
+	* [**iter**](https://docs.python.org/3/library/functions.html#iter) iterates through any **object**
+
+		> **next()** will not work on all objects, e.g. **strings**. Strings are **iterables**, but are not directly **iterators**.
+		
+* A couple of reasonable generator explanations from **StackOverflow**,
+
+	* [Understanding generators in Python](https://stackoverflow.com/questions/1756096/understanding-generators-in-python)
+	* [What does the "yield" keyword do?](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)
+
+---
+#### Takeaways
+
+* **Generator** functions generally require less memory to hold a sequence. Unless the **entire list** is **needed**, **general practice** is to use a **generator** function and use it to **iterate** through the **sequence**.
+
+* This is a great example to demonstrate timings and **efficiency** of code.
+
+* **next()** and **iter()** are not commonly used, (they are used in the background). The main takeaway here is how to great **generator functions** with **yield** to make **large sequences memory efficient**.
+
+---
+
+#### Lessons 100 and 101. Generators Homework
+
+* The instructor’s solutions can be reviewed [here](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/11-Python%20Generators/03-Iterators%20and%20Generators%20Homework%20-%20Solution.ipynb) on gitHub.
+
+* **Interview Question**
+
+	* Review my solution for the **list comprehension** (problem 4) in  **section-13.ipynb**. Basically, use **()s** instead of **[]s** to generate the sequence on the fly instead of putting the values in a list, e.g.,
+	
+			my_list = [1, 3, 5, 9, 2, 6]
+	
+			# Creates a list to iterate through
+			gencomp = [item for item in my_list if item > 3]
+			
+			---
+			
+			# Turns the list comprehension into a list generator
+			gencomp = (item for item in my_list if item > 3)
+	
+		> Here’s a [great explanation](https://stackoverflow.com/questions/364802/how-exactly-does-a-generator-comprehension-work) on **StackOverflow**.
+
+---
+
