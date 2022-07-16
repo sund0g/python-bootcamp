@@ -17,6 +17,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 10: Errors and Exceptions Handling](#10)
 * [Section 11: Milestone Project - 2](#11)
 * [Section 12: Python Decorators](#12)
+* [Section 13: Python Generators](#13)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -1936,7 +1937,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		# returns NOTE the formatting is executed
 		--> 	This is the greet() inside hello()
 		
-* functions **called from other functions** or **passed in as arguments** should **return something**. Else odd behavior can happen, e.g.
+* Functions **called from other functions** or **passed in as arguments** should **return something**. Else odd behavior can happen, e.g.
 
 		# function passed in as an argument
 		
@@ -1970,3 +1971,11 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * Websites such as **pinterest** and **reddis** are developed in Python.
 
+---
+
+<a name="13"></a>
+## Section 13: Python Generators
+
+#### Lesson 100. Generators with Python
+
+* 
