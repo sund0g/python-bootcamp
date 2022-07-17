@@ -2103,8 +2103,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 	* The **default value** is usually assigned via a **lambda function**, e.g.,
 	
-			my_defaultdict = defaultdict(lambda: 0)	# Assign a default value of 0. The lambda could be more 
-													# complex, if needed.
+			my_defaultdict = defaultdict(lambda: 0) # The lambda could be more complex, if needed.
 
 --
 
