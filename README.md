@@ -421,10 +421,15 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 #### Lesson 25. Sets
 
 * [**Sets**](https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20object#sets) are **unordered** collections of objects with **unique** values.
+
+* `{}` denote a set of `,` separated objects, e.g. `{1,2,3}`
+
+* The **elements** in a set are **immutable**.
+
 * `set()` is the syntax to create a set, e.g. `my_set = set()`
 * Examples,
 
-		my_set = set()	creates an empty set
+		my_set = set()		creates an empty set
 		my_set.add(1)		adds the number 1 to my_set
 		my_set.add(2)		adds the number 2 to my_set
 		print(my_set)		returns {1, 2}
@@ -2032,7 +2037,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * **Interview Question**
 
-	* Review my solution for the **list comprehension** (problem 4) in  **section-13.ipynb**. Basically, use **()s** instead of **[]s** to generate the sequence on the fly instead of putting the values in a list, e.g.,
+	* Review my solution for the **list comprehension** (Extra Credit) in  [**section-13.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-13/section-13.ipynb). Basically, use **()s** instead of **[]s** to generate the sequence on the fly instead of putting the values in a list, e.g.,
 	
 			my_list = [1, 3, 5, 9, 2, 6]
 	
@@ -2057,7 +2062,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * **Modules** covered in this section,
 
-	* [**Collections**](https://docs.python.org/3/library/collections.html)
+	* [**collections**](https://docs.python.org/3/library/collections.html)
 	* **Os** and **DateTime**
 	* **Math** and **Random**
 	* **Python Debugger**
@@ -2069,10 +2074,50 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 104. Python Collections Module
 
-> All examples are in the accompanying Jupyter notebook **section-14.ipynb**
+> All examples are in the accompanying Jupyter notebook [**section-14-collections-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-collections-module.ipynb)
 
-*  The [**Collections**](https://docs.python.org/3/library/collections.html) **built-in** module implements specialized **container** types that are alternatives to Python’s general prupose container types, e.g. **list**, **dictionary**, **tuple**, etc.
+*  The [**collections**](https://docs.python.org/3/library/collections.html) **built-in** module implements specialized **container** types that are alternatives to Python’s general purpose container types, e.g. **list**, **dictionary**, **tuple**, etc.
 
 * Very useful [**collections**](https://www.geeksforgeeks.org/python-collections-module/) methods are,
 
-	* [**Counter**](https://www.geeksforgeeks.org/python-collections-module/#counters)  
+--
+* [**Counter**](https://www.geeksforgeeks.org/python-collections-module/#counters): Returns an **unordered dictionary** of **elements** and their **number of instances** in an **iterable**
+
+	* Some common **patterns** when using **Counter**
+
+		Object|Description
+		---|---
+		sum(c.values())|total of all counts
+		c.clear()|reset all counts
+		list(c)|list unique elements
+		set(c)|convert to a set
+		dict(c)|convert to a regular dictionary
+		c.items()|convert to a list of (elem, cnt) pairs
+		Counter(dict(list_of_pairs))|convert from a list of (elem, cnt) pairs
+		c.most_common()[:-n-1:-1]|n least common elements
+		c += Counter()|remove zero and negative counts
+
+--
+			
+* [**defaultdict**](https://www.geeksforgeeks.org/defaultdict-in-python/): Assigns a **default value** in a scenario where a [**keyError**](https://docs.python.org/3/library/exceptions.html#KeyError) occurs.
+
+	* The **default value** is usually assigned via a **lambda function**, e.g.,
+	
+			my_defaultdict = defaultdict(lambda: 0)	# Assign a default value of 0. The lambda could be more 
+													# complex, if needed.
+
+--
+
+* [**namedtuple**](https://www.geeksforgeeks.org/namedtuple-in-python/): Adds a **key** that is **hashed** to a particular **value** in a tuple.
+
+	> This is useful when there is a tuple that has many elements.
+	
+	> **namedtuples** behave similarly to **classes**, i.e. using the ‘.’ object syntax
+	
+* Syntax when declaring a namedtupled is `my_named_tuple = namedtuple(typename, fieldnames)` e.g.,
+
+		dog = namedtuple('Dog', ['age', 'breed', 'name’])
+
+---
+
+
