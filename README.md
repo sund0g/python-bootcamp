@@ -2063,7 +2063,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * **Modules** covered in this section,
 
 	* [**collections**](https://docs.python.org/3/library/collections.html)
-	* **Os** and **DateTime**
+	* [**os**](https://docs.python.org/3/library/os.html#module-os)
+	* [**shutil**](https://docs.python.org/3/library/shutil.html)
+	* **DateTime**
 	* **Math** and **Random**
 	* **Python Debugger**
 	* **Timeit**
@@ -2119,4 +2121,62 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+#### Lesson 105. Opening and Reading Files and Folders (Python OS Module)
 
+> All examples are in the accompanying Jupyter notebook [**section-14-opening-reading-files-folders.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-opening-reading-files-folders.ipynb)
+
+* This lesson teaches how perform actions on files such as,
+
+	* Open every file in a directory
+	* Move files around on the computer
+
+* The [**os**](https://www.geeksforgeeks.org/os-module-python-examples/) **standard utility** module provides methods for interacting with with an **operating system**.
+
+	> The os package should work across operating systems.
+	
+	* Some common **methods** when using **os**
+
+		Object|Description
+		---|---
+		[getcwd](https://docs.python.org/3/library/os.html)|get the current working directory
+		[listdir()](https://www.geeksforgeeks.org/python-os-listdir-method/)|list a directory. Can take a directory as a parameter
+
+
+* **Moving files** around the **filesystem** is done with the [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/) **standard utility** package.
+
+	* Some common **methods** when using **os** and **shutil**
+
+		Object|Description
+		---|---
+		shutil.[move](https://www.geeksforgeeks.org/python-shutil-move-method/)|Moves a file from srcdir to destdir
+		os.[path](https://docs.python.org/3/library/os.path.html)|Contains useful methods for file/directory tasks.
+		os.[remove](https://docs.python.org/3/library/os.html#os.remove)| Removes a file.
+		os.[walk](https://www.geeksforgeeks.org/os-walk-python/)| Traverses a directory path returning a **3-tuple (dirpath, dirnames, filenames**)
+		
+* A note on **deleting files**. The **os** and **shutil** modules provide **3 methods** for deleting files:
+
+	Object|Description
+	---|---
+	os.unlink(path/file)|Deletes the **file** at **path**
+	os.rmdir(path/folder)|Deletes a **folder** (folder must be empty) at path
+	shutil.rmtree(path)|Removes **all files and folders** contained in the path
+			
+	> These methods are **irreversible** and are generally not recommended
+
+
+* A safer way to remove files and directories is via the [**send2trash**](https://pypi.org/project/Send2Trash/) **external** module. send2trash sends **deleted** files to the **trash/recycle bin** instead of permanent removal.
+
+	* To install this package, execute, 
+
+			pip install send2trash
+			
+	* More information about send2trash can be reviewed [**here**](https://www.geeksforgeeks.org/how-to-delete-files-in-python-using-send2trash-module/)
+
+* Make sure to review the **os.walk** example in the Jupyter notebook [**section-14-opening-reading-files-folders.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-opening-reading-files-folders.ipynb)
+
+---
+#### Takeaways
+
+* Use [**with**](https://www.geeksforgeeks.org/with-statement-in-python/) logic when manipulating **files** as this provides **built-in error handling**, and is easier to read.
+
+* **os.path.expanduser(‘~’)** is an easy way to get the User’s home directory.
