@@ -2065,7 +2065,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* [**collections**](https://docs.python.org/3/library/collections.html)
 	* [**os**](https://docs.python.org/3/library/os.html#module-os)
 	* [**shutil**](https://docs.python.org/3/library/shutil.html)
-	* **DateTime**
+	* [**datetime**](https://docs.python.org/3/library/datetime.html#module-datetime)
 	* **Math** and **Random**
 	* **Python Debugger**
 	* **Timeit**
@@ -2180,3 +2180,25 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * Use [**with**](https://www.geeksforgeeks.org/with-statement-in-python/) logic when manipulating **files** as this provides **built-in error handling**, and is easier to read.
 
 * **os.path.expanduser(‘~’)** is an easy way to get the User’s home directory.
+
+---
+
+#### Lesson 106. Python Datetime Module
+
+> All examples are in the accompanying Jupyter notebook [**section-14-datetime-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-datetime-module.ipynb)
+
+* The [**datetime**](https://www.geeksforgeeks.org/python-datetime-module/) module provides methods and objects for dealing with **relational time**.
+
+---
+#### Takeaways
+
+* **datetime** assumes **24h** time.
+
+* **datetime** does **not combine** the data and time in the **base object**. Use the **datetime** subclass for this, e.g.,
+
+		from datetime import datetime
+		
+* Datetime **arithmetic** is a very common **use case**.
+
+---
+
