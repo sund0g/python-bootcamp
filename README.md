@@ -2066,7 +2066,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* [**os**](https://docs.python.org/3/library/os.html#module-os)
 	* [**shutil**](https://docs.python.org/3/library/shutil.html)
 	* [**datetime**](https://docs.python.org/3/library/datetime.html#module-datetime)
-	* **Math** and **Random**
+	* [**math**](https://docs.python.org/3/library/math.html) and [**random**](https://docs.python.org/3/library/random.html)
 	* **Python Debugger**
 	* **Timeit**
 	* **Regular Expressions**
@@ -2199,6 +2199,36 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 		from datetime import datetime
 		
 * Datetime **arithmetic** is a very common **use case**.
+
+---
+
+#### Lesson 107. Python Math and Random Modules
+
+* The **math** module contains most of the commonly used arithmetic functions. These functions can be reviewed by executing,
+
+		--> help(math)
+
+* Some common **methods** when using **random**
+
+	Object|Description
+	---|---
+	[random.choice()](https://www.geeksforgeeks.org/python-numbers-choice-function/)|Returns a random item from a **list**, **tuple**, or **string**
+	[random.choices(population=\<list | tuple | string, k=\<sample size>)](https://www.geeksforgeeks.org/random-choices-method-in-python/)|Returns a random sample that may contain duplicates
+	[random.sample(population=\<list | tuple | string\, k=\<sample size>)](https://www.geeksforgeeks.org/python-random-sample-function/)|Returns a random sample that does NOT contain duplicates
+	[random.shuffle(sequence)](https://www.geeksforgeeks.org/random-shuffle-function-in-python/)|**in-place** shuffles the sequence.	 
+
+	> When using a [**random seed**](https://en.wikipedia.org/wiki/Random_seed) in a **Jupyter notebook**, the **seed** and **dependent operations** may need to be in the **same cell**.
+	
+	> Think of this as the **seed** setting the **sequence** for **infinite random numbers**.
+
+---
+#### Takeaways
+
+* **help(<modulename>)** provides **documentation** on the module. (Think of the old school **man pages**).
+
+* The [**round**]() built-in method follows the [**even/odd** rounding rule](https://github.com/sund0g/python-bootcamp/blob/master/section-14/rounding-rule.md)
+
+* **Complex** mathematical operations may be best solved with the [**numpy**](https://numpy.org/) package.
 
 ---
 
