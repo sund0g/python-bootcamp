@@ -2067,7 +2067,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* [**shutil**](https://docs.python.org/3/library/shutil.html)
 	* [**datetime**](https://docs.python.org/3/library/datetime.html#module-datetime)
 	* [**math**](https://docs.python.org/3/library/math.html) and [**random**](https://docs.python.org/3/library/random.html)
-	* **Python Debugger**
+	* [**Python Debugger**](https://docs.python.org/3/library/pdb.html)
 	* **Timeit**
 	* **Regular Expressions**
 	* **Unzipping** and **Zipping Modules**
@@ -2229,6 +2229,18 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * The [**round**]() built-in method follows the [**even/odd** rounding rule](https://github.com/sund0g/python-bootcamp/blob/master/section-14/rounding-rule.md)
 
 * **Complex** mathematical operations may be best solved with the [**numpy**](https://numpy.org/) package.
+
+---
+
+#### Lesson 108. Python Debugger
+
+> All examples are in the accompanying Jupyter notebook [**section-14-python-debugger.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-python-debugger.ipynb)
+
+* The [**pdb**](https://www.geeksforgeeks.org/python-debugger-python-pdb/) package is the **built-in** Python debugger.
+
+* `pdb.set_trace()` basically acts as a **breakpoint** instead of having to use **print()** statements to debug.
+
+> To quit the interactive session, enter **q** in the dialog box.
 
 ---
 
