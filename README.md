@@ -18,6 +18,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 11: Milestone Project - 2](#11)
 * [Section 12: Python Decorators](#12)
 * [Section 13: Python Generators](#13)
+* [Section 14: Advanced Python Modules](#14)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -420,10 +421,15 @@ Why? Because we are saying from string beginning to end (::) step backwards thro
 #### Lesson 25. Sets
 
 * [**Sets**](https://docs.python.org/3/tutorial/datastructures.html?highlight=list%20object#sets) are **unordered** collections of objects with **unique** values.
+
+* `{}` denote a set of `,` separated objects, e.g. `{1,2,3}`
+
+* The **elements** in a set are **immutable**.
+
 * `set()` is the syntax to create a set, e.g. `my_set = set()`
 * Examples,
 
-		my_set = set()	creates an empty set
+		my_set = set()		creates an empty set
 		my_set.add(1)		adds the number 1 to my_set
 		my_set.add(2)		adds the number 2 to my_set
 		print(my_set)		returns {1, 2}
@@ -2031,7 +2037,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * **Interview Question**
 
-	* Review my solution for the **list comprehension** (problem 4) in  **section-13.ipynb**. Basically, use **()s** instead of **[]s** to generate the sequence on the fly instead of putting the values in a list, e.g.,
+	* Review my solution for the **list comprehension** (Extra Credit) in  [**section-13.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-13/section-13.ipynb). Basically, use **()s** instead of **[]s** to generate the sequence on the fly instead of putting the values in a list, e.g.,
 	
 			my_list = [1, 3, 5, 9, 2, 6]
 	
@@ -2044,6 +2050,263 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 			gencomp = (item for item in my_list if item > 3)
 	
 		> Here’s a [great explanation](https://stackoverflow.com/questions/364802/how-exactly-does-a-generator-comprehension-work) on **StackOverflow**.
+
+---
+
+<a name="14"></a>
+## Section 14: Advanced Python Modules
+
+#### Lesson 103. Intro to Advanced Python Modules
+
+* There are many complex Python modules and packages that are useful in everyday development and engineering.
+
+* **Modules** covered in this section,
+
+	* [**collections**](https://docs.python.org/3/library/collections.html)
+	* [**os**](https://docs.python.org/3/library/os.html#module-os)
+	* [**shutil**](https://docs.python.org/3/library/shutil.html)
+	* [**datetime**](https://docs.python.org/3/library/datetime.html#module-datetime)
+	* [**math**](https://docs.python.org/3/library/math.html) and [**random**](https://docs.python.org/3/library/random.html)
+	* [**Python Debugger**](https://docs.python.org/3/library/pdb.html)
+	* [**re**](https://docs.python.org/3/library/re.html) (regular expressions)
+	* **Timeit**
+	* **Unzipping** and **Zipping Modules**
+
+---
+
+#### Lesson 104. Python Collections Module
+
+> All examples are in the accompanying Jupyter notebook [**section-14-collections-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-collections-module.ipynb)
+
+*  The [**collections**](https://docs.python.org/3/library/collections.html) **built-in** module implements specialized **container** types that are alternatives to Python’s general purpose container types, e.g. **list**, **dictionary**, **tuple**, etc.
+
+* Very useful [**collections**](https://www.geeksforgeeks.org/python-collections-module/) methods are,
+
+--
+* [**Counter**](https://www.geeksforgeeks.org/python-collections-module/#counters): Returns an **unordered dictionary** of **elements** and their **number of instances** in an **iterable**
+
+	* Some common **patterns** when using **Counter**
+
+		Object|Description
+		---|---
+		sum(c.values())|total of all counts
+		c.clear()|reset all counts
+		list(c)|list unique elements
+		set(c)|convert to a set
+		dict(c)|convert to a regular dictionary
+		c.items()|convert to a list of (elem, cnt) pairs
+		Counter(dict(list_of_pairs))|convert from a list of (elem, cnt) pairs
+		c.most_common()[:-n-1:-1]|n least common elements
+		c += Counter()|remove zero and negative counts
+
+--
+			
+* [**defaultdict**](https://www.geeksforgeeks.org/defaultdict-in-python/): Assigns a **default value** in a scenario where a [**keyError**](https://docs.python.org/3/library/exceptions.html#KeyError) occurs.
+
+	* The **default value** is usually assigned via a **lambda function**, e.g.,
+	
+			my_defaultdict = defaultdict(lambda: 0) # The lambda could be more complex, if needed.
+
+--
+
+* [**namedtuple**](https://www.geeksforgeeks.org/namedtuple-in-python/): Adds a **key** that is **hashed** to a particular **value** in a tuple.
+
+	> This is useful when there is a tuple that has many elements.
+	
+	> **namedtuples** behave similarly to **classes**, i.e. using the ‘.’ object syntax
+	
+* Syntax when declaring a namedtupled is `my_named_tuple = namedtuple(typename, fieldnames)` e.g.,
+
+		dog = namedtuple('Dog', ['age', 'breed', 'name’])
+
+---
+
+#### Lesson 105. Opening and Reading Files and Folders (Python OS Module)
+
+> All examples are in the accompanying Jupyter notebook [**section-14-opening-reading-files-folders.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-opening-reading-files-folders.ipynb)
+
+* This lesson teaches how perform actions on files such as,
+
+	* Open every file in a directory
+	* Move files around on the computer
+
+* The [**os**](https://www.geeksforgeeks.org/os-module-python-examples/) **standard utility** module provides methods for interacting with with an **operating system**.
+
+	> The os package should work across operating systems.
+	
+	* Some common **methods** when using **os**
+
+		Object|Description
+		---|---
+		[getcwd](https://docs.python.org/3/library/os.html)|get the current working directory
+		[listdir()](https://www.geeksforgeeks.org/python-os-listdir-method/)|list a directory. Can take a directory as a parameter
+
+
+* **Moving files** around the **filesystem** is done with the [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/) **standard utility** package.
+
+	* Some common **methods** when using **os** and **shutil**
+
+		Object|Description
+		---|---
+		shutil.[move](https://www.geeksforgeeks.org/python-shutil-move-method/)|Moves a file from srcdir to destdir
+		os.[path](https://docs.python.org/3/library/os.path.html)|Contains useful methods for file/directory tasks.
+		os.[remove](https://docs.python.org/3/library/os.html#os.remove)| Removes a file.
+		os.[walk](https://www.geeksforgeeks.org/os-walk-python/)| Traverses a directory path returning a **3-tuple (dirpath, dirnames, filenames**)
+		
+* A note on **deleting files**. The **os** and **shutil** modules provide **3 methods** for deleting files:
+
+	Object|Description
+	---|---
+	os.unlink(path/file)|Deletes the **file** at **path**
+	os.rmdir(path/folder)|Deletes a **folder** (folder must be empty) at path
+	shutil.rmtree(path)|Removes **all files and folders** contained in the path
+			
+	> These methods are **irreversible** and are generally not recommended
+
+
+* A safer way to remove files and directories is via the [**send2trash**](https://pypi.org/project/Send2Trash/) **external** module. send2trash sends **deleted** files to the **trash/recycle bin** instead of permanent removal.
+
+	* To install this package, execute, 
+
+			pip install send2trash
+			
+	* More information about send2trash can be reviewed [**here**](https://www.geeksforgeeks.org/how-to-delete-files-in-python-using-send2trash-module/)
+
+* Make sure to review the **os.walk** example in the Jupyter notebook [**section-14-opening-reading-files-folders.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-opening-reading-files-folders.ipynb)
+
+---
+#### Takeaways
+
+* Use [**with**](https://www.geeksforgeeks.org/with-statement-in-python/) logic when manipulating **files** as this provides **built-in error handling**, and is easier to read.
+
+* **os.path.expanduser(‘~’)** is an easy way to get the User’s home directory.
+
+---
+
+#### Lesson 106. Python Datetime Module
+
+> All examples are in the accompanying Jupyter notebook [**section-14-datetime-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-datetime-module.ipynb)
+
+* The [**datetime**](https://www.geeksforgeeks.org/python-datetime-module/) module provides methods and objects for dealing with **relational time**.
+
+---
+#### Takeaways
+
+* **datetime** assumes **24h** time.
+
+* **datetime** does **not combine** the data and time in the **base object**. Use the **datetime** subclass for this, e.g.,
+
+		from datetime import datetime
+		
+* Datetime **arithmetic** is a very common **use case**.
+
+---
+
+#### Lesson 107. Python Math and Random Modules
+
+> All examples are in the accompanying Jupyter notebook [**section-14-math-and-random-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-math-and-random-module.ipynb)
+
+* The **math** module contains most of the commonly used arithmetic functions. These functions can be reviewed by executing,
+
+		--> help(math)
+
+* Some common **methods** when using **random**
+
+	Object|Description
+	---|---
+	[random.choice()](https://www.geeksforgeeks.org/python-numbers-choice-function/)|Returns a random item from a **list**, **tuple**, or **string**
+	[random.choices(population=\<list | tuple | string, k=\<sample size>)](https://www.geeksforgeeks.org/random-choices-method-in-python/)|Returns a random sample that may contain duplicates
+	[random.sample(population=\<list | tuple | string\, k=\<sample size>)](https://www.geeksforgeeks.org/python-random-sample-function/)|Returns a random sample that does NOT contain duplicates
+	[random.shuffle(sequence)](https://www.geeksforgeeks.org/random-shuffle-function-in-python/)|**in-place** shuffles the sequence.	 
+
+	> When using a [**random seed**](https://en.wikipedia.org/wiki/Random_seed) in a **Jupyter notebook**, the **seed** and **dependent operations** may need to be in the **same cell**.
+	
+	> Think of this as the **seed** setting the **sequence** for **infinite random numbers**.
+
+---
+#### Takeaways
+
+* **help(<modulename>)** provides **documentation** on the module. (Think of the old school **man pages**).
+
+* The [**round**]() built-in method follows the [**even/odd** rounding rule](https://github.com/sund0g/python-bootcamp/blob/master/section-14/rounding-rule.md)
+
+* **Complex** mathematical operations may be best solved with the [**numpy**](https://numpy.org/) package.
+
+---
+
+#### Lesson 108. Python Debugger
+
+> All examples are in the accompanying Jupyter notebook [**section-14-python-debugger.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-python-debugger.ipynb)
+
+* The [**pdb**](https://www.geeksforgeeks.org/python-debugger-python-pdb/) package is the **built-in** Python debugger.
+
+* `pdb.set_trace()` basically acts as a **breakpoint** instead of having to use **print()** statements to debug.
+
+> To quit the interactive session, enter **q** in the dialog box.
+
+---
+
+#### Lessons 109, 110 and 111. Python Regular Expressions
+
+> All examples are in the accompanying Jupyter notebook [**section-14-regular-expressions.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-regular-expressions.ipynb)
+
+* The [**re**](https://www.geeksforgeeks.org/regular-expression-python-examples-set-1/) **built-in** package provides methods for creating specialized search patterns, and search for those patterns in text.
+
+* Some common **methods** when using **re**
+
+	Object|Description
+	---|---
+	[.search()](https://www.geeksforgeeks.org/regular-expressions-python-set-1-search-match-find/)|Returns a **match object** of the **first matched string**
+	[.span()](https://www.geeksforgeeks.org/re-matchobject-span-method-in-python-regex/#:~:text=span()%20method%20returns%20a,(%2D1%2C%2D1).&text=Parameters%3A%20group%20(optional)%20By%20default%20this%20is%200.)|Returns a **tuple** containing **starting and ending index** of the **first matched string**
+	[.group()](https://docs.python.org/3/library/re.html#re.Match.group)|Returns one or more **subgroups** of the **match**
+	[.findall()](https://www.geeksforgeeks.org/python-regex-re-search-vs-re-findall/)|Returns a **list** of **all matched strings**
+	[.finditer()](https://docs.python.org/3/library/re.html#re.finditer)|Returns an **iterator** yielding **match objects** over **all non-overlapping matches**
+	[.compile()](https://docs.python.org/3/library/re.html#re.compile)|Compiles together regex pattern codes. This is very powerful when combined with **.group()**
+
+* **regex character identifiers** are as follows,
+
+	Character|Description|Example Pattern Code|Example Match
+	---|---|---|---
+	\d|a digit|file_\d\d|file_25
+	\w|alphanumeric|\w-\w\w\w|A-b_1
+	\s|white space|a\sb\sc|a b c
+	\D|non-digit|\D\D\D|ABC
+	\W|non-alphanumeric|\W\W\W\W\W|*-+=)
+	\S|non-white space|\S\S\S\S|Yoyo
+	
+* **regex quantifiers** are as follows,
+
+	Character|Description|Example Pattern Code|Example Match
+	---|---|---|---
+	+|occurs more than once|Version \w-\w+|Version A-b1_1
+	{3}|occurs exactly 3 times|\D{3}|abc
+	{2,4}|occurs 2 to 4 times|\d{2,4}|123
+	{3,}|occurs 3 or more times|\w{3,}|anycharacters
+	*|occurs 0 or more times|A\*B\*C\*|AAACC
+	?|once or none|plurals?|plural
+
+* **regex syntax**: `r”some pattern`, e.g. `r”\d{3}-\d{3}-\d{4}”`
+
+* **regex pattern codes syntax**: `r()-()-()`, e.g. `r(\d{3})-(\d{3})-(\d{4})`
+
+	> Pattern subgroups are an efficient way of extracting groups of pattern data.
+
+* **Additional regex syntax**
+
+	* Refer to the [**intro to regex**](https://docs.python.org/3/howto/regex.html) and [**full list**](https://docs.python.org/3/library/re.html#regular-expression-syntax) of syntax for additional details.
+
+	> The lesson reviews the **OR |**, **character wildcard .**, **starts/ends with ^$**, **set []** syntax.
+
+---
+#### Takeaways
+
+* Regular expressions are notoriously difficult to remember. Rather than trying to memorize them, focus on understanding how to look up the data, and then find the associated regex pattern e.g.,
+
+		phone number: (xxx)-xxx-xxxx
+	
+		regex: r”(\d\d\d)-\d\d\d-\d\d\d\d” or r”(\d{3})-\d{3}-d{4}”
+		
+* **Pattern group indexes** start at **1** instead of **0**.
 
 ---
 
