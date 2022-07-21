@@ -2068,8 +2068,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* [**datetime**](https://docs.python.org/3/library/datetime.html#module-datetime)
 	* [**math**](https://docs.python.org/3/library/math.html) and [**random**](https://docs.python.org/3/library/random.html)
 	* [**Python Debugger**](https://docs.python.org/3/library/pdb.html)
+	* [**re**](https://docs.python.org/3/library/re.html) (regular expressions)
 	* **Timeit**
-	* **Regular Expressions**
 	* **Unzipping** and **Zipping Modules**
 
 ---
@@ -2204,6 +2204,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 107. Python Math and Random Modules
 
+> All examples are in the accompanying Jupyter notebook [**section-14-math-and-random-module.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-math-and-random-module.ipynb)
+
 * The **math** module contains most of the commonly used arithmetic functions. These functions can be reviewed by executing,
 
 		--> help(math)
@@ -2241,6 +2243,70 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * `pdb.set_trace()` basically acts as a **breakpoint** instead of having to use **print()** statements to debug.
 
 > To quit the interactive session, enter **q** in the dialog box.
+
+---
+
+#### Lessons 109, 110 and 111. Python Regular Expressions
+
+> All examples are in the accompanying Jupyter notebook [**section-14-regular-expressions.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-regular-expressions.ipynb)
+
+* The [**re**](https://www.geeksforgeeks.org/regular-expression-python-examples-set-1/) **built-in** package provides methods for creating specialized search patterns, and search for those patterns in text.
+
+* Some common **methods** when using **re**
+
+	Object|Description
+	---|---
+	[.search()](https://www.geeksforgeeks.org/regular-expressions-python-set-1-search-match-find/)|Returns a **match object** of the **first matched string**
+	[.span()](https://www.geeksforgeeks.org/re-matchobject-span-method-in-python-regex/#:~:text=span()%20method%20returns%20a,(%2D1%2C%2D1).&text=Parameters%3A%20group%20(optional)%20By%20default%20this%20is%200.)|Returns a **tuple** containing **starting and ending index** of the **first matched string**
+	[.group()](https://docs.python.org/3/library/re.html#re.Match.group)|Returns one or more **subgroups** of the **match**
+	[.findall()](https://www.geeksforgeeks.org/python-regex-re-search-vs-re-findall/)|Returns a **list** of **all matched strings**
+	[.finditer()](https://docs.python.org/3/library/re.html#re.finditer)|Returns an **iterator** yielding **match objects** over **all non-overlapping matches**
+	[.compile()](https://docs.python.org/3/library/re.html#re.compile)|Compiles together regex pattern codes. This is very powerful when combined with **.group()**
+
+* **regex character identifiers** are as follows,
+
+	Character|Description|Example Pattern Code|Example Match
+	---|---|---|---
+	\d|a digit|file_\d\d|file_25
+	\w|alphanumeric|\w-\w\w\w|A-b_1
+	\s|white space|a\sb\sc|a b c
+	\D|non-digit|\D\D\D|ABC
+	\W|non-alphanumeric|\W\W\W\W\W|*-+=)
+	\S|non-white space|\S\S\S\S|Yoyo
+	
+* **regex quantifiers** are as follows,
+
+	Character|Description|Example Pattern Code|Example Match
+	---|---|---|---
+	+|occurs more than once|Version \w-\w+|Version A-b1_1
+	{3}|occurs exactly 3 times|\D{3}|abc
+	{2,4}|occurs 2 to 4 times|\d{2,4}|123
+	{3,}|occurs 3 or more times|\w{3,}|anycharacters
+	*|occurs 0 or more times|A\*B\*C\*|AAACC
+	?|once or none|plurals?|plural
+
+* **regex syntax**: `r”some pattern`, e.g. `r”\d{3}-\d{3}-\d{4}”`
+
+* **regex pattern codes syntax**: `r()-()-()`, e.g. `r(\d{3})-(\d{3})-(\d{4})`
+
+	> Pattern subgroups are an efficient way of extracting groups of pattern data.
+
+* **Additional regex syntax**
+
+	* Refer to the [**intro to regex**](https://docs.python.org/3/howto/regex.html) and [**full list**](https://docs.python.org/3/library/re.html#regular-expression-syntax) of syntax for additional details.
+
+	> The lesson reviews the **OR |**, **character wildcard .**, **starts/ends with ^$**, **set []** syntax.
+
+---
+#### Takeaways
+
+* Regular expressions are notoriously difficult to remember. Rather than trying to memorize them, focus on understanding how to look up the data, and then find the associated regex pattern e.g.,
+
+		phone number: (xxx)-xxx-xxxx
+	
+		regex: r”(\d\d\d)-\d\d\d-\d\d\d\d” or r”(\d{3})-\d{3}-d{4}”
+		
+* **Pattern group indexes** start at **1** instead of **0**.
 
 ---
 
