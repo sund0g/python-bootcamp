@@ -2343,4 +2343,40 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 113. Zipping and Unzipping Files with Python
 
-* 
+> All examples are in the accompanying Jupyter notebook [**section-14-zipping-and-unzipping-files.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-zipping-and-unzipping-files.ipynb)
+
+* To programmatically compress files, use the [**zipfile**](https://docs.python.org/3/library/zipfile.html) package.
+
+* Example syntax to create an empty zipfile is,
+
+		compressed_file = zipfile.Zipfile(“compressed_file.zip”, “w”)
+		
+	> Note: the method **ZipFile()** is **camelcase**.
+	
+* Example syntax to add a file to a zipfile,
+
+		compressed_file.write(“my_file.txt”, compress_type=zipfile.ZIP_DEFLATED)
+		
+	> **zipfile.ZIP_DEFLATED** is generally the **standard** compression type.
+	
+* Example syntax to extract files,
+
+		zip_object = zipfile.ZipFile("compressed_file1.zip", "r")
+		
+		# Extract a single file
+		zip_object.extract(“one_file.txt”, “extracted_files”)
+		
+		# Extract all files
+		zip_object.extractall("extracted_files")
+	
+* To programmatically **zip** and **unzip** entire **directories**, use the [**shutil**](https://docs.python.org/3/library/shutil.html) package.
+
+---
+#### Takeaways
+
+* Refer to additional examples of [**zipfile**](https://www.geeksforgeeks.org/working-zip-files-python/) and [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/).
+* [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/) will probably be the **most used** of the two methods here.
+
+---
+
+#### Lesson 114
