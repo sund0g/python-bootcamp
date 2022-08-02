@@ -2379,4 +2379,14 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
-#### Lesson 114
+#### Lessons 114 and 115. Advanced Python Module Puzzle
+
+> All examples are in the accompanying Jupyter notebook [**section-14-advanced-python-module-exercise.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-advanced-python-module-exercise.ipynb)
+
+---
+#### Takeaways
+
+* This puzzle shows how to travers and search directories using [**os.walk()**](https://www.geeksforgeeks.org/os-walk-python/) There are more efficient ways to do this, if you are motivated to research this.
+
+---
+
