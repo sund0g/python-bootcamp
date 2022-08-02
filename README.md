@@ -2069,7 +2069,8 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 	* [**math**](https://docs.python.org/3/library/math.html) and [**random**](https://docs.python.org/3/library/random.html)
 	* [**Python Debugger**](https://docs.python.org/3/library/pdb.html)
 	* [**re**](https://docs.python.org/3/library/re.html) (regular expressions)
-	* **Timeit**
+	* [**timeit**](https://docs.python.org/3/library/timeit.html)
+
 	* **Unzipping** and **Zipping Modules**
 
 ---
@@ -2310,3 +2311,82 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+#### Lesson 112. Timing Your Python Code
+
+> All examples are in the accompanying Jupyter notebook [**section-14-timing-code.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-timing-code.ipynb.ipynb)
+
+* There are at least **three** ways to time the **efficiency** of code
+
+	1. Track the time elapsed from beginning to end of the code execution.
+		* This method is acceptable for small amounts of code.
+		* It may not provide granular enough timings to prove the code efficiency.
+	
+	2. Use [**timeit**](https://www.geeksforgeeks.org/timeit-python-examples/)
+		* This **built-in** module is more complex, but it runs code repeatedly to get more granular timings.
+		* The syntax is
+
+				timeit(setup, statement, test_repetitions)
+				
+			> **setup** and **statement** are string inputs. Refer to [**section-14-timing-code.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-timing-code.ipynb.ipynb) for examples how to do this with multi-line strings ‘’’’’’
+	
+	3. [**%%timeit**](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit) for Jupyter notebooks only.
+
+		> The **default** number of **test** iterations is **100000**
+
+---
+#### Takeaways
+
+* It is good practice to understand the efficiency of code. Code that executes fine at a small scale may perform poorly at a large scale.
+
+* Timings are are great additions to unit tests.
+
+---
+
+#### Lesson 113. Zipping and Unzipping Files with Python
+
+> All examples are in the accompanying Jupyter notebook [**section-14-zipping-and-unzipping-files.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-zipping-and-unzipping-files.ipynb)
+
+* To programmatically compress files, use the [**zipfile**](https://docs.python.org/3/library/zipfile.html) package.
+
+* Example syntax to create an empty zipfile is,
+
+		compressed_file = zipfile.Zipfile(“compressed_file.zip”, “w”)
+		
+	> Note: the method **ZipFile()** is **camelcase**.
+	
+* Example syntax to add a file to a zipfile,
+
+		compressed_file.write(“my_file.txt”, compress_type=zipfile.ZIP_DEFLATED)
+		
+	> **zipfile.ZIP_DEFLATED** is generally the **standard** compression type.
+	
+* Example syntax to extract files,
+
+		zip_object = zipfile.ZipFile("compressed_file1.zip", "r")
+		
+		# Extract a single file
+		zip_object.extract(“one_file.txt”, “extracted_files”)
+		
+		# Extract all files
+		zip_object.extractall("extracted_files")
+	
+* To programmatically **zip** and **unzip** entire **directories**, use the [**shutil**](https://docs.python.org/3/library/shutil.html) package.
+
+---
+#### Takeaways
+
+* Refer to additional examples of [**zipfile**](https://www.geeksforgeeks.org/working-zip-files-python/) and [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/).
+* [**shutil**](https://www.geeksforgeeks.org/shutil-module-in-python/) will probably be the **most used** of the two methods here.
+
+---
+
+#### Lessons 114 and 115. Advanced Python Module Puzzle
+
+> All examples are in the accompanying Jupyter notebook [**section-14-advanced-python-module-exercise.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-14/section-14-advanced-python-module-exercise.ipynb)
+
+---
+#### Takeaways
+
+* This puzzle shows how to travers and search directories using [**os.walk()**](https://www.geeksforgeeks.org/os-walk-python/) There are more efficient ways to do this, if you are motivated to research this.
+
+---
