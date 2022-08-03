@@ -19,6 +19,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 12: Python Decorators](#12)
 * [Section 13: Python Generators](#13)
 * [Section 14: Advanced Python Modules](#14)
+* [Section 15: Web Scraping with Python](#15)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2390,3 +2391,105 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 * This puzzle shows how to travers and search directories using [**os.walk()**](https://www.geeksforgeeks.org/os-walk-python/) There are more efficient ways to do this, if you are motivated to research this.
 
 ---
+
+<a name="15"></a>
+## Section 15: Web Scraping with Python
+
+#### Lesson 116. Introduction to Web Scraping
+
+* **Web scraping** is a general term for techniques involving automating the gathering of data from a website.
+
+* To understand web scraping, it is necessary to understand how a website works, i.e.
+	* when a browser **loads** a website, the user sees what is known as the **front-end** of the website. Most modern websites use a combination of **html**, **css**, and **javascript** to manage the front-end.
+
+* There are **three** things that must be understood to effectively web scrape
+	1. **Rules** of **web scraping**
+	2. **Limitations** of **web scraping**
+	3. Basic **html** and **css**
+
+* **Rules** for web scraping
+	* Always try to get permission before scraping.
+	* Too many attempts to scrap can result in your IP address being blocked from the website.
+	* Some sites automatically block scraping software.
+
+* **Limitations** of web scraping
+	* Generally every website is unique, so every web scraping script will be unique.
+	* Any change to a website may break a scraping script.
+
+* **html** is used to create the basic structure of a web page
+
+* **css** is used for the design and style of a web page, i.e. where elements are placed and how the page looks.
+
+* **javascript** is used to define the interactive elements of the page.
+
+* The following packages will need to be installed for the lessons in this section,
+
+		pip3 install requests
+		pip3 install lxml
+		pip3 install bs4
+		
+	> For **Anaconda** distributions, use `conda install` instead of `pip3 install`
+
+---
+
+#### Lesson 117. Setting Up Web Scraping Libraries
+
+> I install the **requests**, **lxml**, and **bs4** packages manually for this section because I generally do not web scrape. I will manually uninstall these packages at the end of the section.
+
+> It is also recommended to use the **Chrome** browser to be able to follow along with the lessons.
+
+* Install the packages from a command prompt as follows,
+
+		pip3 install requests lxml bs4
+				
+---
+
+#### Lesson 118. Python Web Scraping - Grabbing a Title
+
+> All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb)
+
+---
+#### Takeaways
+
+* The **.getText()** method returns the **innerText** of an **element**, that is the text which is visible on the page along with its sub-elements. Inner text is the text that is between the opening and closing tags. .getText() ignores all the leading and trailing spaces.
+
+---
+
+#### Lesson 119. Python Web Scraping - Grabbing a Class
+
+> All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb)
+
+* Some example syntax for **soup.select()**
+
+	Syntax|Match Results
+	---|---
+	`soup.select(‘div’)`|All elements with the `<div>` tag
+	`soup.select(‘#some_id’)`|The HTML element containing the `id` attribute of some_id
+	`soup.select(‘.notice’)`|All the HTML elements with the CSS `class` named `notice`
+	`soup.select(‘div span’)`|Any elements named `span` that are within an element named `div` 
+	`soup.select(‘div > span’)`|Any elements named `span` that are *directly* within an element named `<div>`, with no other element in between
+	
+---
+
+#### Lesson 120. Python Web Scraping - Grabbing an Image
+
+> All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb)
+
+> Always check copyright permission **before** downloading and using an image from someone else’s website.
+
+---
+
+#### Lessons 121 & 122. Python Web Scraping - Book Examples Parts One and Two
+
+> All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb) 
+
+---
+
+#### Lessons 123 & 124. Python Web Scraping - Exercise
+
+> All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb) 
+
+---
+
+
+
