@@ -21,6 +21,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 14: Advanced Python Modules](#14)
 * [Section 15: Web Scraping with Python](#15)
 * [Section 16: Working with images in Python](#16)
+* [Section 17: Working with PDFs and Spreadsheet CSV Files](#17)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2523,4 +2524,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+<a name="17"></a>
+## Section 17: Working with PDFs and Spreadsheet CSV Files
 
+#### Lesson 129. Introduction to PDFs and Spreadsheets with Python
+
+* 
