@@ -20,6 +20,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 13: Python Generators](#13)
 * [Section 14: Advanced Python Modules](#14)
 * [Section 15: Web Scraping with Python](#15)
+* [Section 16: Working with images in Python](#16)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2489,7 +2490,37 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 > All examples are in the accompanying Jupyter notebook [**section-15-python-web-scraping-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-15/section-15-python-web-scraping-lessons.ipynb) 
 
+* At this point, you may want to uninstall the web scraping packages installed at the beginning of this section,
+
+		pip3 uninstall requests lxml bs4
+
 ---
 
+<a name="16"></a>
+## Section 16: Working with images in Python
+
+> All examples are in the accompanying Jupyter notebook [**section-16-working-with-images-lessons.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-16/section-16-working-with-images-lessons.ipynb) 
+
+#### Lessons 125 & 126. Introduction to and Working with Images with Python
+
+* In this section we will use the [**pillow**](https://python-pillow.org/) package to interact with image files. 
+
+> I install the **pillow** package manually for this section because I generally do not interact with images. I will manually uninstall it at the end of the section.
+
+> It is also recommended to use the **Chrome** browser to be able to follow along with the lessons.
+
+* Install the packages from a command prompt as follows,
+
+		pip3 install pillow
+		
+* We will need some **images** to work with in this section, so **download** all the **.png** files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/14-Working-with-Images).
+
+---
+
+#### Lessons 127 & 128. Image Exercises
+
+> All exercises are in the accompanying Jupyter notebook [**section-16-working-with-images-exercises**](https://github.com/sund0g/python-bootcamp/blob/master/section-16/section-16-working-with-images-exercises)
+
+---
 
 
