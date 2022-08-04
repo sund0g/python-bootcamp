@@ -21,6 +21,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 14: Advanced Python Modules](#14)
 * [Section 15: Web Scraping with Python](#15)
 * [Section 16: Working with images in Python](#16)
+* [Section 17: Working with PDFs and Spreadsheet CSV Files](#17)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2523,4 +2524,68 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 ---
 
+<a name="17"></a>
+## Section 17: Working with PDFs and Spreadsheet CSV Files
+
+#### Lesson 129. Introduction to PDFs and Spreadsheets with Python
+
+* We will need some **pdf** and **csv** files to work with in this section, so **download** all the **.pdf** and **.csv** files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets).
+
+---
+
+#### Lesson 130. Working with CSV Files in Python
+
+> All examples are in the accompanying Jupyter notebook [**section-17-working-with-csv-files.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-working-with-csv-files.ipynb)
+
+* Refer to the [**Wikipedia article**](https://en.wikipedia.org/wiki/Comma-separated_values) for an explanation on .csv files.
+
+* This lesson will use the **built-in** package [**csv**](https://docs.python.org/3/library/csv.html).
+
+* Other packages that are very useful are,
+
+	* pandas [**official site**](https://pandas.pydata.org/) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/introduction-to-pandas-in-python/). This is a common and useful tool for **Data Science** tasks.
+	* openpyxsl [**official site**](https://openpyxl.readthedocs.io/en/stable/) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/python-reading-excel-file-using-openpyxl-module/). This module is designed specifically for **Excel** files.
+	* Google Sheets API [**official site**](https://developers.google.com/sheets/api/quickstart/python) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/how-to-automate-google-sheets-with-python/). This **API** is designed specifically for **Google Sheets**.
+
+* The **common factor** between these, (and other) packages is that they all **export** to **.csv**.
+
+* **Reading** and **writing** to **csv** files use the **objects**,
+
+	Object|Description
+	---|---
+	[**csv.reader()**](https://docs.python.org/3/library/csv.html#csv.reader)|Reads data from a .csv file
+	[**csv.writer()**](https://docs.python.org/3/library/csv.html#csv.writer)| Writes data to a .csv file
+
+---
+#### Takeaways
+
+* Most **file readers**, e.g. **csv.reader()** return **file data** as a **list of lists**.
+
+---
+
+#### Lesson 131. Working with PDF Files in Python
+
+> All examples are in the accompanying Jupyter notebook [**section-17-working-with-pdf-files.ipynb**](section-17-working-with-pdf-files.ipynb)
+
+* Refer to the [**Wikipedia article**](https://en.wikipedia.org/wiki/PDF) for an explanation on .pdf files.
+
+> Many **pdf** files are **not machine readable** via Python. A **scanned pdf** is most likely **unreadable** by Python.
+
+* This lesson will use the **open-source** package [**pypdf2**](https://pypdf2.readthedocs.io/en/latest/).
+
+> I install the **pypdf2** package manually for this section. I will manually uninstall it at the end of the section.
+
+* Install the package from a command prompt as follows,
+
+		pip3 install pypdf2
+
+---
+
+#### Lessons 132 & 133. PDFs and Spreadsheets Python Puzzle Exercise
+
+> My solution is in the accompanying Jupyter notebook [**section-17-pdfs-spreadsheets-puzzle.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-pdfs-spreadsheets-puzzle.ipynb)
+
+* We will need some **files** to work with in this section, so **download** all the files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets/Exercise_Filess).
+
+---
 
