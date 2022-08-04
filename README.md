@@ -2583,3 +2583,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lessons 132 & 133. PDFs and Spreadsheets Python Puzzle Exercise
 
+> My solution is in the accompanying Jupyter notebook [**section-17-pdfs-spreadsheets-puzzle.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-pdfs-spreadsheets-puzzle.ipynb)
+
+* We will need some **files** to work with in this section, so **download** all the files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets/Exercise_Filess).
+
+---
+
