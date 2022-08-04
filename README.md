@@ -2529,4 +2529,39 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 129. Introduction to PDFs and Spreadsheets with Python
 
-* 
+* We will need some **pdf** and **csv** files to work with in this section, so **download** all the **.pdf** and **.csv** files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets).
+
+---
+
+#### Lesson 130. Working with CSV Files in Python
+
+> All examples are in the accompanying Jupyter notebook [**section-17-working-with-csv-files.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-working-with-csv-files.ipynb)
+
+* Refer to the the [**Wikipedia article**](https://en.wikipedia.org/wiki/Comma-separated_values) for an explanation on .csv files.
+
+* This lesson will use the **built-in** package [**csv**](https://docs.python.org/3/library/csv.html).
+
+* Other packages that are very useful are,
+
+	* pandas [**official site**](https://pandas.pydata.org/) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/introduction-to-pandas-in-python/). This is a common and useful tool for **Data Science** tasks.
+	* openpyxsl [**official site**](https://openpyxl.readthedocs.io/en/stable/) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/python-reading-excel-file-using-openpyxl-module/). This module is designed specifically for **Excel** files.
+	* Google Sheets API [**official site**](https://developers.google.com/sheets/api/quickstart/python) & [**GeeksforGeeks**](https://www.geeksforgeeks.org/how-to-automate-google-sheets-with-python/). This **API** is designed specifically for **Google Sheets**.
+
+* The **common factor** between these, (and other) packages is that they all **export** to **.csv**.
+
+* **Reading** and **writing** to **csv** files use the **objects**,
+
+	Object|Description
+	---|---
+	[**csv.reader()**](https://docs.python.org/3/library/csv.html#csv.reader)|Reads data from a .csv file
+	[**csv.writer()**](https://docs.python.org/3/library/csv.html#csv.writer)| Writes data to a .csv file
+
+---
+#### Takeaways
+
+* Most **file readers**, e.g. **csv.reader()** return **file data** as a **list of lists**.
+
+---
+
+#### Lesson 131. Working with PDF Files in Python
+
