@@ -22,6 +22,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 15: Web Scraping with Python](#15)
 * [Section 16: Working with images in Python](#16)
 * [Section 17: Working with PDFs and Spreadsheet CSV Files](#17)
+* [Section 18: Emails with Python](#18)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2565,7 +2566,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 131. Working with PDF Files in Python
 
-> All examples are in the accompanying Jupyter notebook [**section-17-working-with-pdf-files.ipynb**](section-17-working-with-pdf-files.ipynb)
+> All examples are in the accompanying Jupyter notebook [**section-17-working-with-pdf-files.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-working-with-pdf-files.ipynb)
 
 * Refer to the [**Wikipedia article**](https://en.wikipedia.org/wiki/PDF) for an explanation on .pdf files.
 
@@ -2586,6 +2587,31 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > My solution is in the accompanying Jupyter notebook [**section-17-pdfs-spreadsheets-puzzle.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-pdfs-spreadsheets-puzzle.ipynb)
 
 * We will need some **files** to work with in this section, so **download** all the files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets/Exercise_Filess).
+
+---
+
+<a name="18"></a>
+## Section 18: Emails with Python
+
+#### Lesson 134. Introduction to Emails with Python
+
+* The methods learned in this section are dependent on security and administrative settings. They may/may not work depending on how your email account and firewall settings are configured.
+
+* This section will use the **built-in** package [**smtplib**](https://docs.python.org/3/library/smtplib.html) to set up the protocols, connections, login, and sending and receiving emails.
+
+* Refer to the [**Wikipedia article**](https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol) for an explanation of **SMTP**.
+
+* The lessons will show how to connect to a **gmail** account via **smtp.gmail.com**
+
+* If you use gmail for your normal email, you will have to **generate** an additional **app password** for the lessons, as your usual password will not work for security reasons.
+
+---
+
+#### Lessons 135 & 136. Sending and Receiving Emails with Python
+
+> All examples are in the accompanying Jupyter notebook [**section-18-sending-emails.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-18/section-18-sending-emails.ipynb)
+> 
+> NOTE: I did not set up the app password for this and the next lesson, as 1) I don’t want to accidentally mess up my gmail account, and 2) I don’t interact with my email programmatically.
 
 ---
 
