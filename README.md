@@ -23,6 +23,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 16: Working with images in Python](#16)
 * [Section 17: Working with PDFs and Spreadsheet CSV Files](#17)
 * [Section 18: Emails with Python](#18)
+* [Section 19: Final Capstone Project](#19)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2586,7 +2587,7 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 > My solution is in the accompanying Jupyter notebook [**section-17-pdfs-spreadsheets-puzzle.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-17/section-17-pdfs-spreadsheets-puzzle.ipynb)
 
-* We will need some **files** to work with in this section, so **download** all the files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets/Exercise_Filess).
+* We will need some **files** to work with in this section, so **download** all the files from the [**Instructor’s course**](https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/tree/master/15-PDFs-and-Spreadsheets/Exercise_Files).
 
 ---
 
@@ -2612,6 +2613,15 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 > All examples are in the accompanying Jupyter notebook [**section-18-sending-emails.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-18/section-18-sending-emails.ipynb)
 > 
 > NOTE: I did not set up the app password for this and the next lesson, as 1) I don’t want to accidentally mess up my gmail account, and 2) I don’t interact with my email programmatically.
+
+---
+
+<a name="19"></a>
+## Section 19: Final Capstone Project
+
+#### Lesson 137. Final Capstone Project
+
+* The section contains a [**list of projects**](https://github.com/sund0g/python-bootcamp/blob/master/section-19/final-capstone-project-ideas.ipynb) and [**solutions**](https://github.com/sund0g/python-bootcamp/blob/master/section-19/solution-links.md) to work on as you have time.
 
 ---
 
