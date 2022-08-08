@@ -2678,3 +2678,9 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 #### Lesson 142. Advanced Lists
 
 * Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-lists.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-lists.ipynb)
+
+---
+
+#### Lessons 143 & 144. Advanced Python Objects Assessment Test
+
+* The test with answers can be reviewed in the accompanying Jupyter notebook [**section-20-assessment-test.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-assessment-test.ipynb)
