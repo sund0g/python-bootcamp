@@ -24,6 +24,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 17: Working with PDFs and Spreadsheet CSV Files](#17)
 * [Section 18: Emails with Python](#18)
 * [Section 19: Final Capstone Project](#19)
+* [Section 20: Advanced Python Objects and Data Structures](#20)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2623,5 +2624,63 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 * The section contains a [**list of projects**](https://github.com/sund0g/python-bootcamp/blob/master/section-19/final-capstone-project-ideas.ipynb) and [**solutions**](https://github.com/sund0g/python-bootcamp/blob/master/section-19/solution-links.md) to work on as you have time.
 
+* Study these as they contain many favorite **interview questions**.
+
 ---
 
+<a name="20"></a>
+## Section 20. Advanced Python Objects and Data Structures
+
+#### Lesson 138. Advanced Numbers
+
+* Python has two **built-in** modules for **mathematical** functions
+
+	Module|Description
+	---|---
+	[**math**](https://docs.python.org/3/library/math.html)|Supports mathematical functions defined by the C standard
+	[**cmath**](https://docs.python.org/3/library/cmath.html#module-cmath)|Supports mathematical functions for [**Complex Numbers**](https://en.wikipedia.org/wiki/Complex_number)
+
+* Python also has some standard **built-ins** methods
+
+	Method|Description
+	---|---
+	[**hex(n)**](https://www.geeksforgeeks.org/python-hex-function/)|Converts a number to Hexadecimal.
+	[**bin(n)**](https://www.geeksforgeeks.org/bin-in-python/)|Converts a number to Binary.
+	[**pow(x, y, [z])**](https://www.geeksforgeeks.org/pow-in-python/)|Takes 2 or 3 numbers. If 2, raises x to the power of y. If 3, raises x to the power of y and mods the result with z.
+	[**abs(n)**](https://www.geeksforgeeks.org/abs-in-python/)|Returns the [**Absolute Value**](https://en.wikipedia.org/wiki/Absolute_value) of a number, (removes the ‘**-**’ if n is negative.)
+	[**round(n, p)**]()|Rounds a number to the provided precision (p). Default precision is 0. Returns a **float**.
+	
+---
+
+#### Lesson 139. Advanced Strings
+
+* There are several **built-in** string methods in Python. Simple examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-strings.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-strings.ipynb)
+
+---
+
+#### Lesson 140. Advanced Sets
+
+* There are several **built-in** set methods in Python. Simple examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-sets.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-sets.ipynb)
+
+---
+#### Takeaways
+
+* The **set** data structure is very powerful, but often under-utilized. Keep this in mind when working with sets.
+
+---
+
+#### Lesson 141. Advanced Dictionaries
+
+* Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-dictionaries.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-dictionaries.ipynb)
+
+---
+
+#### Lesson 142. Advanced Lists
+
+* Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-lists.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-lists.ipynb)
+
+---
+
+#### Lessons 143 & 144. Advanced Python Objects Assessment Test
+
+* The test with answers can be reviewed in the accompanying Jupyter notebook [**section-20-assessment-test.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-assessment-test.ipynb)
