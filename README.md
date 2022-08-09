@@ -25,6 +25,7 @@ The exercises of the course are on Github here: [https://github.com/Pierian-Data
 * [Section 18: Emails with Python](#18)
 * [Section 19: Final Capstone Project](#19)
 * [Section 20: Advanced Python Objects and Data Structures](#20)
+* [Section 21: Introduction to GUIs](#21)
 
 * **NOTE:** there are some **interview questions** listed throughout this course. Search on **"interview"** to find them.
 
@@ -2671,16 +2672,66 @@ not/NOT|Used to reverse the logical state of its operand.|Not(a and b) is false.
 
 #### Lesson 141. Advanced Dictionaries
 
-* Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-dictionaries.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-dictionaries.ipynb)
+> Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-dictionaries.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-dictionaries.ipynb)
 
 ---
 
 #### Lesson 142. Advanced Lists
 
-* Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-lists.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-lists.ipynb)
+> Examples can be reviewed in the accompanying Jupyter notebook [**section-20-advanced-lists.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-advanced-lists.ipynb)
 
 ---
 
 #### Lessons 143 & 144. Advanced Python Objects Assessment Test
 
-* The test with answers can be reviewed in the accompanying Jupyter notebook [**section-20-assessment-test.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-assessment-test.ipynb)
+> The test with answers can be reviewed in the accompanying Jupyter notebook [**section-20-assessment-test.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-20/section-20-assessment-test.ipynb)
+
+---
+
+<a name="21"></a>
+## Section 21: Introduction to GUIs
+
+#### Lessons 145 & 146. Intro to GUIs and Jupyter Widgets
+
+* A complete list of GUI Frameworks is maintained at [**python.org**](https://wiki.python.org/moin/GuiProgramming).
+
+* You might want to use [**pygame**](https://www.pygame.org/hifi.html) for creating **video games**.
+
+* If building **web apps**, it may be better to to use **html**, **css**, and **javascript** for the GUI **front-end**, and [**Flask**](https://flask.palletsprojects.com/en/2.2.x/) or [**Django**](https://www.djangoproject.com/) for **back-end** work.
+
+*  The lessons in this section will use [**ipywidgets**](https://ipywidgets.readthedocs.io/en/latest/index.html) designed for **Jupyter Notebooks**.
+
+	> This type of GUI is best suited for creating **dashboards** for **data/Business analysis** use-cases.
+
+---
+
+#### Lesson 147. Interact Functionality with GUIs
+
+> All examples can be reviewed in the accompanying Jupyter notebook [**section-21-interact.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-21/section-21-interact.ipynb)
+
+---
+
+#### Lesson 148. GUI Widget Basics
+
+> All examples can be reviewed in the accompanying Jupyter notebook [**section-21-widget-basics.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-21/section-21-widget-basics.ipynb)
+
+---
+
+#### Lesson 149. List of Possible Widgets
+
+> All examples can be reviewed in the accompanying Jupyter notebook [**section-21-widget-list.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-21/section-21-widget-list.ipynb)
+
+---
+
+#### Lesson 150. Widget Styling and Layouts
+
+> All examples can be reviewed in the accompanying Jupyter notebook [**section-21-widget-styling.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-21/section-21-widget-styling.ipynb)
+
+---
+
+#### Lesson 151. Example of what a Widget can do!
+
+> Example can be reviewed in the accompanying Jupyter notebook [**section-21-custom-widget.ipynb**](https://github.com/sund0g/python-bootcamp/blob/master/section-21/section-21-custom-widget.ipynb)
+
+---
+
